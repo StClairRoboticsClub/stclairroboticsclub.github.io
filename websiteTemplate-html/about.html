@@ -12,6 +12,32 @@
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="./components/navigation.css" />
     <link rel="stylesheet" href="./components/footer.css" />
+    <style>
+      body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.15;
+        z-index: 0;
+        pointer-events: none;
+        background-size: 40px 40px;
+        background-image: 
+          linear-gradient(color-mix(in srgb, var(--color-accent) 8%, transparent) 1px, transparent 1px),
+          linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 8%, transparent) 1px, transparent 1px);
+      }
+      nav, main, footer {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
