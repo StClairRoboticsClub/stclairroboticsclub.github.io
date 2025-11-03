@@ -456,6 +456,118 @@ body {
   line-height: 1.7;
 }
 
+/* ===== Events Section ===== */
+.events {
+  padding: var(--spacing-3xl) 0;
+  background: var(--color-bg);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+}
+
+.event-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.event-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 99, 65, 0.2) 0%, rgba(0, 184, 255, 0.2) 100%);
+}
+
+.event-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.event-card:hover .event-image {
+  transform: scale(1.1);
+}
+
+.event-date-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: rgba(0, 184, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: var(--spacing-sm);
+  text-align: center;
+  min-width: 60px;
+  box-shadow: var(--shadow-md);
+}
+
+.event-month {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.5px;
+}
+
+.event-day {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.event-content {
+  padding: var(--spacing-lg);
+}
+
+.event-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.event-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.event-meta svg {
+  flex-shrink: 0;
+}
+
+.event-meta span {
+  color: var(--color-text-muted);
+}
+
+.event-description {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-top: var(--spacing-md);
+}
+
 /* ===== CTA Section ===== */
 .cta {
   padding: var(--spacing-3xl) 0;
@@ -663,6 +775,15 @@ body {
   
   .features-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .event-image-wrapper {
+    height: 200px;
   }
   
   .cta-buttons {
