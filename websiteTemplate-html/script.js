@@ -229,14 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
     new EventCarousel(carousel);
   });
   
-  // Initialize lightbox
-  new Lightbox();
+  // Initialize lightbox only if it exists on the page
+  const lightboxElement = document.getElementById('lightbox');
+  if (lightboxElement) {
+    new Lightbox();
+  }
 });
 
 // Lightbox for full-size image viewing
 class Lightbox {
   constructor() {
     this.lightbox = document.getElementById('lightbox');
+    if (!this.lightbox) return;
+    
     this.lightboxImage = this.lightbox.querySelector('.lightbox-image');
     this.lightboxCaption = this.lightbox.querySelector('.lightbox-caption');
     this.closeBtn = this.lightbox.querySelector('.lightbox-close');
@@ -246,6 +251,8 @@ class Lightbox {
     this.currentCarousel = null;
     this.currentImages = [];
     this.currentIndex = 0;
+    this.previousFocus = null;
+    this.focusableElements = null;
     
     this.init();
   }
@@ -307,11 +314,52 @@ class Lightbox {
       this.prevBtn.style.display = 'flex';
       this.nextBtn.style.display = 'flex';
     }
+    
+    // Focus management for accessibility
+    this.previousFocus = document.activeElement;
+    this.closeBtn.focus();
+    this.trapFocus();
   }
   
   close() {
     this.lightbox.classList.remove('active');
     document.body.style.overflow = '';
+    
+    // Restore focus to previously focused element
+    if (this.previousFocus && this.previousFocus.focus) {
+      this.previousFocus.focus();
+    }
+  }
+  
+  trapFocus() {
+    // Get all focusable elements in the lightbox
+    const focusableSelectors = [
+      this.closeBtn,
+      this.prevBtn.style.display !== 'none' ? this.prevBtn : null,
+      this.nextBtn.style.display !== 'none' ? this.nextBtn : null
+    ].filter(el => el !== null);
+    
+    this.focusableElements = focusableSelectors;
+    
+    // Trap focus within lightbox
+    this.lightbox.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      
+      const firstElement = this.focusableElements[0];
+      const lastElement = this.focusableElements[this.focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    });
   }
   
   next() {
