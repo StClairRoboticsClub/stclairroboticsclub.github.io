@@ -140,7 +140,26 @@
       <div class="events-grid">
         <div class="event-card">
           <div class="event-image-wrapper">
-            <img src="images/pizza-night/pizza-photo-1.jpg" alt="Pizza Lego Night" class="event-image">
+            <div class="event-carousel" data-carousel="pizza-night">
+              <div class="carousel-track">
+                <img src="images/pizza-night/pizza-photo-1.jpg" alt="Pizza Lego Night - Photo 1" class="event-image active">
+                <img src="images/pizza-night/pizza-photo-2.jpg" alt="Pizza Lego Night - Photo 2" class="event-image">
+              </div>
+              <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"/>
+                </svg>
+              </button>
+              <button class="carousel-btn carousel-btn-next" aria-label="Next photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <button class="carousel-dot active" data-index="0" aria-label="Go to photo 1"></button>
+                <button class="carousel-dot" data-index="1" aria-label="Go to photo 2"></button>
+              </div>
+            </div>
             <div class="event-date-badge">
               <span class="event-month">Oct</span>
               <span class="event-day">22</span>
@@ -162,7 +181,11 @@
         </div>
         <div class="event-card">
           <div class="event-image-wrapper">
-            <img src="images/club-fair/clubfair-photo-1.jpg" alt="St. Clair College Club Fair" class="event-image">
+            <div class="event-carousel" data-carousel="club-fair">
+              <div class="carousel-track">
+                <img src="images/club-fair/clubfair-photo-1.jpg" alt="St. Clair College Club Fair - Photo 1" class="event-image active">
+              </div>
+            </div>
             <div class="event-date-badge">
               <span class="event-month">Oct</span>
               <span class="event-day">23</span>
