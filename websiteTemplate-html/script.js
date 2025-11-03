@@ -228,6 +228,108 @@ document.addEventListener('DOMContentLoaded', () => {
   carousels.forEach(carousel => {
     new EventCarousel(carousel);
   });
+  
+  // Initialize lightbox
+  new Lightbox();
 });
+
+// Lightbox for full-size image viewing
+class Lightbox {
+  constructor() {
+    this.lightbox = document.getElementById('lightbox');
+    this.lightboxImage = this.lightbox.querySelector('.lightbox-image');
+    this.lightboxCaption = this.lightbox.querySelector('.lightbox-caption');
+    this.closeBtn = this.lightbox.querySelector('.lightbox-close');
+    this.prevBtn = this.lightbox.querySelector('.lightbox-prev');
+    this.nextBtn = this.lightbox.querySelector('.lightbox-next');
+    
+    this.currentCarousel = null;
+    this.currentImages = [];
+    this.currentIndex = 0;
+    
+    this.init();
+  }
+  
+  init() {
+    // Add click listeners to all carousel images
+    const allCarousels = document.querySelectorAll('.event-carousel');
+    allCarousels.forEach(carousel => {
+      const images = carousel.querySelectorAll('.event-image');
+      images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          this.currentCarousel = carousel;
+          this.currentImages = Array.from(images);
+          this.open(index);
+        });
+      });
+    });
+    
+    // Close button
+    this.closeBtn.addEventListener('click', () => this.close());
+    
+    // Navigation buttons
+    this.prevBtn.addEventListener('click', () => this.prev());
+    this.nextBtn.addEventListener('click', () => this.next());
+    
+    // Close on background click
+    this.lightbox.addEventListener('click', (e) => {
+      if (e.target === this.lightbox) {
+        this.close();
+      }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!this.lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') this.close();
+      if (e.key === 'ArrowLeft') this.prev();
+      if (e.key === 'ArrowRight') this.next();
+    });
+  }
+  
+  open(index) {
+    this.currentIndex = index;
+    const img = this.currentImages[index];
+    
+    this.lightboxImage.src = img.src;
+    this.lightboxImage.alt = img.alt;
+    this.lightboxCaption.textContent = img.alt;
+    
+    this.lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Hide navigation if only one image
+    if (this.currentImages.length <= 1) {
+      this.prevBtn.style.display = 'none';
+      this.nextBtn.style.display = 'none';
+    } else {
+      this.prevBtn.style.display = 'flex';
+      this.nextBtn.style.display = 'flex';
+    }
+  }
+  
+  close() {
+    this.lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.currentImages.length;
+    this.updateImage();
+  }
+  
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.currentImages.length) % this.currentImages.length;
+    this.updateImage();
+  }
+  
+  updateImage() {
+    const img = this.currentImages[this.currentIndex];
+    this.lightboxImage.src = img.src;
+    this.lightboxImage.alt = img.alt;
+    this.lightboxCaption.textContent = img.alt;
+  }
+}
 
 console.log('St. Clair Robotics Club - Website loaded successfully!');
