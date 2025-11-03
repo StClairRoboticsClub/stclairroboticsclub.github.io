@@ -14,8 +14,9 @@ Modern, fully rebuilt static website for the St. Clair Robotics Club featuring a
 ✅ Complete website rebuild with modern UI  
 ✅ All pages fully functional (Home, About, Team, Join)  
 ✅ Responsive design for all devices  
+✅ Professional `/docs` directory structure for GitHub Pages
 ✅ Static file server configured on port 5000  
-✅ **GitHub Pages compatible** - no build process required
+✅ **GitHub Pages ready** - no build process required
 
 ## Technology Stack
 - **Frontend:** Pure HTML5/CSS3/JavaScript (no framework)
@@ -27,7 +28,7 @@ Modern, fully rebuilt static website for the St. Clair Robotics Club featuring a
 
 ```
 stclairroboticsclub-dev/
-├── websiteTemplate-html/          # Main website directory
+├── docs/                          # Website directory (GitHub Pages)
 │   ├── index.html                 # Homepage with modern hero + events
 │   ├── about.html                 # Mission, values, activities
 │   ├── team.html                  # Leadership profiles
@@ -36,10 +37,13 @@ stclairroboticsclub-dev/
 │   ├── script.js                  # Interactivity + animations
 │   ├── Robotic_full_logo.png      # Club logo (1024x1024)
 │   └── images/                    # Event photos
-│       ├── club-fair/             # Club Fair Oct 23, 2025
-│       └── pizza-night/           # Pizza Lego Night Oct 22, 2025
-├── server.py                      # Local dev server
-└── replit.md                      # This documentation
+│       ├── club-fair/             # Club Fair Oct 23, 2025 (6 photos)
+│       └── pizza-night/           # Pizza Lego Night Oct 22, 2025 (4 photos)
+├── server.py                      # Local dev server (serves /docs)
+├── replit.md                      # Project documentation
+├── GITHUB_PAGES_SETUP.md          # Deployment guide
+├── CNAME                          # Custom domain config
+└── README.md                      # Repository readme
 ```
 
 ## Design System
@@ -61,7 +65,7 @@ stclairroboticsclub-dev/
 
 ### Spacing
 - Uses CSS custom properties for consistent spacing
-- Range: `--spacing-xs` (0.5rem) to `--spacing-3xl` (6rem)
+- Optimized compact spacing: `--spacing-xs` (0.25rem) to `--spacing-3xl` (3rem)
 
 ## Key Features
 
@@ -122,17 +126,16 @@ python3 server.py
 ### GitHub Pages Deployment
 Simply push to the `main` branch - no build process required!
 
-**Option 1: Root Directory**
-- Set GitHub Pages source to `/` (root)
-- Website files served directly from `websiteTemplate-html/`
+1. Push your changes to GitHub (via Replit Git panel or terminal)
+2. Go to repository Settings → Pages
+3. Set source to `/docs` directory from `main` branch
+4. Save and wait 1-2 minutes for deployment
 
-**Option 2: Docs Directory**
-- Move `websiteTemplate-html` contents to `/docs`
-- Set GitHub Pages source to `/docs`
+See `GITHUB_PAGES_SETUP.md` for detailed instructions.
 
 ## Development Workflow
 
-1. Edit HTML/CSS/JS files in `websiteTemplate-html/`
+1. Edit HTML/CSS/JS files in `/docs` directory
 2. Refresh browser to see changes (cache disabled)
 3. Commit and push to GitHub
 4. Changes go live automatically on GitHub Pages
@@ -169,6 +172,15 @@ Simply push to the `main` branch - no build process required!
 - ✅ Alt text on images
 
 ## Recent Changes
+
+**November 3, 2025 - GitHub Pages Professional Structure**
+- Reorganized project with professional `/docs` directory for GitHub Pages
+- Moved all website files from `websiteTemplate-html/` to `/docs`
+- Updated server.py to serve from `/docs` directory
+- Created comprehensive GitHub Pages deployment guide (GITHUB_PAGES_SETUP.md)
+- Cleaned up root directory for better organization
+- Updated all documentation to reflect new structure
+- **Ready for production deployment to GitHub Pages**
 
 **November 3, 2025 - Event Photos with Carousel & Lightbox**
 - Added "Recent Events" section to homepage with interactive photo carousels
