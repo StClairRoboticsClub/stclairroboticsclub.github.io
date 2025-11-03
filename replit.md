@@ -28,13 +28,16 @@ Modern, fully rebuilt static website for the St. Clair Robotics Club featuring a
 ```
 stclairroboticsclub-dev/
 ├── websiteTemplate-html/          # Main website directory
-│   ├── index.html                 # Homepage with modern hero
+│   ├── index.html                 # Homepage with modern hero + events
 │   ├── about.html                 # Mission, values, activities
 │   ├── team.html                  # Leadership profiles
 │   ├── join.html                  # Join process + FAQ
-│   ├── style.css                  # Main stylesheet (~1000 lines)
+│   ├── style.css                  # Main stylesheet (~1200 lines)
 │   ├── script.js                  # Interactivity + animations
-│   └── Robotic_full_logo.png      # Club logo (1024x1024)
+│   ├── Robotic_full_logo.png      # Club logo (1024x1024)
+│   └── images/                    # Event photos
+│       ├── club-fair/             # Club Fair Oct 23, 2025
+│       └── pizza-night/           # Pizza Lego Night Oct 22, 2025
 ├── server.py                      # Local dev server
 └── replit.md                      # This documentation
 ```
@@ -65,8 +68,10 @@ stclairroboticsclub-dev/
 ### Homepage
 - ✅ Modern hero section with gradient text effect
 - ✅ Animated floating logo card
-- ✅ Club statistics (members, projects, competitions)
 - ✅ Features grid with icon cards
+- ✅ Recent Events section with photo cards
+  - Pizza Lego Night (Oct 22, 2025, 5pm-9pm)
+  - St. Clair College Club Fair (Oct 23, 2025, 11am-2pm in SLC)
 - ✅ Call-to-action section
 
 ### About Page
@@ -164,6 +169,13 @@ Simply push to the `main` branch - no build process required!
 - ✅ Alt text on images
 
 ## Recent Changes
+
+**November 3, 2025 - Event Photos Integration**
+- Added "Recent Events" section to homepage
+- Integrated event photos from Club Fair (Oct 23) and Pizza Lego Night (Oct 22)
+- Styled event cards with hover effects, date badges, and metadata
+- Implemented responsive image layout for mobile devices
+- Organized photos in structured directories: images/club-fair/ and images/pizza-night/
 
 **November 3, 2025 - Complete Rebuild**
 - Rebuilt entire website from scratch with modern UI
