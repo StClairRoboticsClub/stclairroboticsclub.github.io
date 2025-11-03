@@ -1,58 +1,151 @@
-# St. Clair Robotics Club 🌐
+# St. Clair Robotics Club Website 🤖
 
-Welcome to the official website repository for the **St. Clair College Robotics Club**!  
-This site is hosted on **GitHub Pages** and served at [stclairroboticsclub.ca](https://stclairroboticsclub.ca).
+Official website for the **St. Clair College Robotics Club** - hosted on GitHub Pages at [stclairroboticsclub.ca](https://stclairroboticsclub.ca)
 
 ---
 
 ## 🧭 About the Club
-The St. Clair Robotics Club is a student-led organization focused on **hands-on robotics projects**, creative problem-solving, and collaborative learning.  
 
-We design and build robots that explore areas such as mobility, automation, sensing, and control.  
-Through these projects, members gain practical experience in:
+The St. Clair Robotics Club is a student-led organization focused on hands-on robotics projects, creative problem-solving, and collaborative learning. Members gain practical experience with:
 
-- Microcontrollers (Raspberry Pi Pico, Arduino, ESP32, etc.)  
-- CAD design and 3D printing  
-- Electronics, sensors, and PCB design  
-- Programming (Python, C/C++, ROS)  
-- Mechanical design and system integration  
+- **Microcontrollers**: Raspberry Pi Pico, Arduino, ESP32
+- **CAD & Fabrication**: 3D printing, mechanical design
+- **Electronics**: Sensors, circuits, PCB design
+- **Programming**: Python, C/C++, ROS
+- **Team Collaboration**: Projects, competitions, workshops
 
-Whether you're new to robotics or an experienced builder, there’s a place for you here!
-
----
-
-## 💻 About This Repository
-This repository contains the source code for our **official website**, which serves as a hub for:
-- Club announcements  
-- Ongoing and past projects  
-- Member information  
-- Links to our Discord, GitHub, and social media  
-
-The site is built using **static HTML/CSS/JavaScript** and deployed via **GitHub Pages**.
+📍 **Location**: St. Clair College, Windsor, ON  
+📧 **Contact**: contact.info@stclairroboticsclub.ca  
+�� **Discord**: https://discord.gg/gEC8P2Dfqv  
+📷 **Instagram**: @stclairrobotics
 
 ---
 
-## 🚀 Deployment
-This site is automatically published to:
+## 💻 Repository Structure
 
-🔗 **https://stclairroboticsclub.ca**
+```
+stclairroboticsclub-dev/
+├── docs/                      # Website files (served by GitHub Pages)
+│   ├── *.html                 # Page files
+│   ├── style.css              # Main stylesheet
+│   ├── script.js              # JavaScript functionality
+│   ├── Robotic_full_logo.png  # Club logo
+│   └── images/                # Event photos
+│       ├── club-fair/
+│       └── pizza-night/
+├── server.py                  # Local development server
+├── CNAME                      # Custom domain configuration
+├── README.md                  # This file
+└── LICENSE                    # License information
+```
 
-### Hosting Configuration
-- **Host:** GitHub Pages  
-- **Domain Registrar:** Porkbun  
-- **Custom Domain:** `stclairroboticsclub.ca`  
-- **Branch:** `main`  
-- **Folder:** `/` (root directory)
+**Technology Stack**: Pure HTML5/CSS3/JavaScript (no build process required)
 
 ---
 
-## 🧩 Development Setup
-If you’d like to contribute to the site:
+## 🚀 Local Development
+
+### Running Locally
+
 ```bash
-# Clone the repo
-git clone https://github.com/stclairroboticsclub/stclairroboticsclub.github.io.git
+# Clone the repository
+git clone https://github.com/StClairRoboticsClub/stclairroboticsclub-dev.git
+cd stclairroboticsclub-dev
 
-# Move into the project folder
-cd stclairroboticsclub.github.io
+# Start local server
+python3 server.py
+```
 
-# Open the index.html file in your browser or code editor
+The website will be available at `http://localhost:5000`
+
+### Making Changes
+
+1. Edit files in the `/docs` directory
+2. Refresh browser to see changes (cache disabled in dev server)
+3. Test all pages and functionality
+4. Commit and push changes
+
+---
+
+## 📤 Deployment to GitHub Pages
+
+### Initial Setup
+
+1. Go to repository Settings → Pages
+2. Configure source:
+   - **Source**: Deploy from a branch
+   - **Branch**: `main`
+   - **Folder**: `/docs`
+3. Click **Save**
+4. Wait 1-2 minutes for deployment
+
+### Deploying Updates
+
+```bash
+# Stage all changes
+git add .
+
+# Commit with descriptive message
+git commit -m "Description of changes"
+
+# Push to GitHub
+git push origin main
+```
+
+GitHub Pages automatically deploys changes within 1-2 minutes.
+
+---
+
+## 🎨 Website Features
+
+### Pages
+- **Home** (`index.html`): Hero section, features, recent events
+- **About** (`about.html`): Mission, values, activities
+- **Team** (`team.html`): Leadership profiles
+- **Join** (`join.html`): Membership process and FAQ
+
+### Interactive Features
+- Responsive navigation with mobile menu
+- Event photo carousels with lightbox
+- FAQ accordion
+- Smooth scrolling and animations
+- Intersection Observer for scroll effects
+
+### Design System
+- **Primary**: St. Clair Green (#006341)
+- **Accent**: Robotics Blue (#00b8ff)
+- **Fonts**: Rajdhani (headings), Inter (body)
+- **Mobile-first responsive design**
+
+---
+
+## 🛠️ Troubleshooting
+
+**Site not updating?**
+- Check GitHub Actions tab for deployment status
+- Clear browser cache (Ctrl+Shift+R)
+- Wait 1-2 minutes for propagation
+
+**404 errors?**
+- Verify `/docs` folder is selected in Pages settings
+- Check that all file paths are correct (case-sensitive)
+
+**Local server issues?**
+- Ensure Python 3 is installed
+- Check port 5000 is not in use
+- Run from repository root directory
+
+---
+
+## 👥 Team
+
+- **John Beverly** - President (john@stclairroboticsclub.ca)
+- **Jeremy** - Vice President (jeremy@stclairroboticsclub.ca)
+- **Wisam** - Treasurer
+- **Ryan Savard** - Secretary
+
+---
+
+## 📝 License
+
+This project is licensed under the terms specified in the LICENSE file.
