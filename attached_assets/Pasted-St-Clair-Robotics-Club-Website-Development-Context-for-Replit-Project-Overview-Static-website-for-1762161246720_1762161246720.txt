@@ -1,0 +1,58 @@
+St. Clair Robotics Club Website - Development Context for Replit
+Project Overview
+Static website for the St. Clair Robotics Club with custom branding, built using HTML/CSS with a modern dark theme and robotics-focused design.
+
+Current Repository Structure
+
+stclairroboticsclub-dev/├── websiteTemplate-html/│   ├── index.html (main homepage)│   ├── about.html (club mission and values)│   ├── team.html (leadership profiles)│   ├── join.html (recruitment page)│   ├── style.css (main stylesheet)│   ├── index.css (homepage-specific styles)│   ├── Robotic_full_logo.png (1024x1024 club logo)│   ├── components/│   │   ├── navigation.css (nav bar styling)│   │   └── footer.css (footer styling)│   └── HOW_TO_ADD_PHOTOS.md (guide for adding team photos)├── CNAME├── LICENSE└── README.md
+Color Scheme
+Primary (St. Clair Green): #006341 (var(--color-primary))
+Accent (Robotics Blue): #00b8ff (var(--color-accent))
+Background: #0c0d12 (var(--color-surface))
+Text: #f0f3f5 (var(--color-on-surface))
+Secondary Text: #b7bdc3 (var(--color-on-surface-secondary))
+Key Features Implemented
+✅ Semi-transparent fixed navigation with blur effect
+✅ Dark background matching index.html across all pages
+✅ Grid pattern overlay removed (clean dark background)
+✅ Custom St. Clair branding colors throughout
+✅ Team page with 4 member profiles (photo placeholders ready)
+✅ About page with mission, values, and activities
+✅ Join page with steps, FAQ, and contact info
+✅ Responsive design with mobile support
+Team Members (Ready for Photos)
+John Beverly - President (placeholder ID: john-photo)
+Jeremy - Vice President (placeholder ID: jeremy-photo)
+Wisam - Treasurer (placeholder ID: wisam-photo)
+Ryan Savard - Member (placeholder ID: ryan-photo)
+Critical Styling Details
+Navigation uses backdrop-filter: blur(20px) with semi-transparent background
+All pages have explicit body styling: background: var(--color-surface); margin: 0;
+Main content has padding-top: calc(80px + var(--spacing-4xl)) to account for fixed nav
+Font families: Rajdhani (headings), Inter (body)
+Links & Contact
+Email: robotics@stclaircollege.ca
+Discord: https://discord.gg/gEC8P2Dfqv
+Instagram: @stclairrobotics
+Location: St. Clair College, Windsor, ON
+Development Setup for Replit
+Import from GitHub: StClairRoboticsClub/stclairroboticsclub-dev
+Set root directory to websiteTemplate-html/
+Configure to serve static files (HTML/CSS)
+No build process needed - pure HTML/CSS
+Testing Locally
+
+cd websiteTemplate-htmlpython3 -m http.server 8080# Visit: http://localhost:8080/index.html
+Next Steps (Pending)
+ Add actual team member photos (replace SVG placeholders)
+ Test on mobile devices
+ Add Projects page (when club has projects)
+ Add Sponsors page (when sponsors secured)
+ Deploy to production: stclairroboticsclub.github.io
+Important Notes
+All Pexels stock images have been removed
+TeleportHQ branding removed from index.html
+Projects and Sponsors menu items removed (can re-add later)
+Background should match index.html exactly on all pages
+Navigation must be semi-transparent with blur, not solid white
+Copy this entire prompt when starting your Replit session to maintain full context! this is a prompt form cursor meant to aid my replid developmetn. fill in the blacks and make sure the priomt is complete. add the infor anout github pages 
