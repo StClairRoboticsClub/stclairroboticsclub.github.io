@@ -4,8 +4,11 @@
 Modern, fully rebuilt static website for the St. Clair Robotics Club featuring a clean dark theme, smooth animations, and professional UI design. Built with pure HTML/CSS/JavaScript for easy deployment on GitHub Pages.
 
 **Website:** https://stclairroboticsclub.ca  
-**Email:** robotics@stclaircollege.ca  
-**Location:** St. Clair College, Windsor, ON
+**Email:** contact.info@stclairroboticsclub.ca  
+**John Beverly:** john@stclairroboticsclub.ca  
+**Jeremy:** jeremy@stclairroboticsclub.ca  
+**Location:** St. Clair College, Windsor, ON  
+**College Website:** https://www.stclaircollege.ca/
 
 ## Current Status
 ✅ Complete website rebuild with modern UI  
@@ -96,10 +99,10 @@ stclairroboticsclub-dev/
 
 ## Team Members
 
-1. **John Beverly** - President
-2. **Jeremy** - Vice President
+1. **John Beverly** - President (john@stclairroboticsclub.ca)
+2. **Jeremy** - Vice President (jeremy@stclairroboticsclub.ca)
 3. **Wisam** - Treasurer
-4. **Ryan Savard** - Member
+4. **Ryan Savard** - Secretary
 
 ## Running the Website
 

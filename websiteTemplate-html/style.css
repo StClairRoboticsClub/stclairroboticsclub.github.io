@@ -893,7 +893,22 @@ body {
 .team-role {
   color: var(--color-accent);
   font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.team-email {
+  font-size: 0.875rem;
   margin-bottom: var(--spacing-sm);
+}
+
+.team-email a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.team-email a:hover {
+  color: var(--color-accent);
 }
 
 .team-bio {
