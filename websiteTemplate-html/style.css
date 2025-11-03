@@ -126,13 +126,15 @@ body {
 
 .nav-link-cta {
   background: var(--color-accent);
-  color: #0c0d12;
+  color: #0c0d12 !important;
+  font-weight: 600;
 }
 
 .nav-link-cta:hover {
   background: #00d4ff;
   box-shadow: var(--glow);
   transform: translateY(-2px);
+  color: #0c0d12 !important;
 }
 
 .nav-toggle {
