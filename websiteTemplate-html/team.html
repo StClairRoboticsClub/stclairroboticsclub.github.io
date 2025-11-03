@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="./components/footer.css" />
   </head>
   <body>
-    <!-- Navigation -->
-    <nav id="navigation-main" aria-label="Main Navigation" class="navigation-wrapper">
+    <div class="home-container">
+      <div class="home-home">
+        <!-- Navigation -->
+        <nav id="navigation-main" aria-label="Main Navigation" class="navigation-wrapper">
       <div class="navigation-container">
         <a href="index.html">
           <div aria-label="St. Clair Robotics Home" class="navigation-logo-link">
@@ -76,9 +78,10 @@
             Club Leadership
           </h2>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-xl); margin-bottom: var(--spacing-3xl);">
-            <!-- Team Member Card Template -->
+            <!-- President - John -->
             <div class="leader-card" style="border: 1px solid var(--color-border); overflow: hidden; background: var(--color-surface-elevated); box-shadow: var(--shadow-level-1); border-radius: var(--border-radius-lg); transition: transform var(--animation-duration-fast), box-shadow var(--animation-duration-fast);">
-              <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; align-items: center; justify-content: center;">
+              <div id="john-photo" style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <!-- Photo will be added here. For now showing placeholder -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" style="color: rgba(255,255,255,0.5);">
                   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0"></path>
@@ -91,10 +94,10 @@
                   President
                 </div>
                 <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: var(--color-on-surface); margin-bottom: var(--spacing-sm);">
-                  Position Open
+                  John Beverly
                 </h3>
                 <p style="color: var(--color-on-surface-secondary); line-height: var(--line-height-normal); margin-bottom: var(--spacing-md);">
-                  Leading the club's vision and coordinating all robotics initiatives.
+                  Leading the club with a passion for robotics, video games, and tinkering. Dedicated to making this year full of exciting projects and hands-on experiences for everyone.
                 </p>
                 <a href="mailto:robotics@stclaircollege.ca" style="color: var(--color-accent); text-decoration: none; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">
                   Contact →
@@ -102,9 +105,10 @@
               </div>
             </div>
 
-            <!-- Vice President -->
+            <!-- Vice President - Jeremy -->
             <div class="leader-card" style="border: 1px solid var(--color-border); overflow: hidden; background: var(--color-surface-elevated); box-shadow: var(--shadow-level-1); border-radius: var(--border-radius-lg); transition: transform var(--animation-duration-fast), box-shadow var(--animation-duration-fast);">
-              <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; align-items: center; justify-content: center;">
+              <div id="jeremy-photo" style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <!-- Photo will be added here. For now showing placeholder -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" style="color: rgba(255,255,255,0.5);">
                   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0"></path>
@@ -117,10 +121,10 @@
                   Vice President
                 </div>
                 <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: var(--color-on-surface); margin-bottom: var(--spacing-sm);">
-                  Position Open
+                  Jeremy
                 </h3>
                 <p style="color: var(--color-on-surface-secondary); line-height: var(--line-height-normal); margin-bottom: var(--spacing-md);">
-                  Supporting club operations and project management.
+                  2nd-year Electromechanical Engineering student specializing in robotics, PCB design, and mechatronics. Currently exploring embedded systems and ROS while developing custom robot control boards.
                 </p>
                 <a href="mailto:robotics@stclaircollege.ca" style="color: var(--color-accent); text-decoration: none; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">
                   Contact →
@@ -128,9 +132,10 @@
               </div>
             </div>
 
-            <!-- Technical Lead -->
+            <!-- Treasurer - Wisam -->
             <div class="leader-card" style="border: 1px solid var(--color-border); overflow: hidden; background: var(--color-surface-elevated); box-shadow: var(--shadow-level-1); border-radius: var(--border-radius-lg); transition: transform var(--animation-duration-fast), box-shadow var(--animation-duration-fast);">
-              <div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; align-items: center; justify-content: center;">
+              <div id="wisam-photo" style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <!-- Photo will be added here. For now showing placeholder -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" style="color: rgba(255,255,255,0.5);">
                   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0"></path>
@@ -140,13 +145,40 @@
               </div>
               <div style="padding: var(--spacing-lg);">
                 <div style="color: var(--color-accent); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); margin-bottom: var(--spacing-xs); letter-spacing: var(--letter-spacing-normal);">
-                  Technical Lead
+                  Treasurer
                 </div>
                 <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: var(--color-on-surface); margin-bottom: var(--spacing-sm);">
-                  Position Open
+                  Wisam
                 </h3>
                 <p style="color: var(--color-on-surface-secondary); line-height: var(--line-height-normal); margin-bottom: var(--spacing-md);">
-                  Overseeing technical direction and mentoring members on robotics systems.
+                  Electromechanical/Robotics student passionate about automation and advanced technology. NASA-recognized "Galactic Problem Solver" for developing ML-based exoplanet detection systems achieving 95% accuracy.
+                </p>
+                <a href="mailto:robotics@stclaircollege.ca" style="color: var(--color-accent); text-decoration: none; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">
+                  Contact →
+                </a>
+              </div>
+            </div>
+
+            <!-- Member - Ryan -->
+            <div class="leader-card" style="border: 1px solid var(--color-border); overflow: hidden; background: var(--color-surface-elevated); box-shadow: var(--shadow-level-1); border-radius: var(--border-radius-lg); transition: transform var(--animation-duration-fast), box-shadow var(--animation-duration-fast);">
+              <div id="ryan-photo" style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <!-- Photo will be added here. For now showing placeholder -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" style="color: rgba(255,255,255,0.5);">
+                  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0"></path>
+                    <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path>
+                  </g>
+                </svg>
+              </div>
+              <div style="padding: var(--spacing-lg);">
+                <div style="color: var(--color-accent); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); margin-bottom: var(--spacing-xs); letter-spacing: var(--letter-spacing-normal);">
+                  Member
+                </div>
+                <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-lg); color: var(--color-on-surface); margin-bottom: var(--spacing-sm);">
+                  Ryan Savard
+                </h3>
+                <p style="color: var(--color-on-surface-secondary); line-height: var(--line-height-normal); margin-bottom: var(--spacing-md);">
+                  1st-year Electromechanical Engineering Technology - Robotics student. Veteran of FRC Team 5885 with four years of competition experience, now mentoring the next generation of robotics competitors.
                 </p>
                 <a href="mailto:robotics@stclaircollege.ca" style="color: var(--color-accent); text-decoration: none; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">
                   Contact →
@@ -292,5 +324,7 @@
         </div>
       </div>
     </footer>
+      </div>
+    </div>
   </body>
 </html>
