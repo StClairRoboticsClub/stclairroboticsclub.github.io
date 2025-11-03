@@ -170,7 +170,7 @@ Simply push to the `main` branch - no build process required!
 
 ## Recent Changes
 
-**November 3, 2025 - Event Photos Integration with Carousel**
+**November 3, 2025 - Event Photos with Carousel & Lightbox**
 - Added "Recent Events" section to homepage with interactive photo carousels
 - Integrated real event photos:
   - **Pizza Lego Night (Oct 22)**: 4 photos showing student activities
@@ -184,6 +184,16 @@ Simply push to the `main` branch - no build process required!
   - Smooth fade transitions between photos
   - Accessible focus indicators for keyboard users
   - Smart hiding of controls for single-photo events
+- Implemented full-screen lightbox for viewing photos:
+  - Click any carousel image to view full-size
+  - Keyboard accessible (ESC to close, arrows to navigate, Tab to cycle controls)
+  - Click navigation (prev/next buttons, close button)
+  - Click outside to close
+  - Focus trap for accessibility (keyboard users stay within modal)
+  - Focus restoration when closed
+  - Null-safe initialization (won't break on pages without lightbox)
+  - Responsive design for all screen sizes
+  - Image captions from alt text
 - Converted HEIC photos to JPEG format for web compatibility
 - Styled event cards with hover effects, date badges, and metadata
 - Organized photos in structured directories: images/club-fair/ and images/pizza-night/
