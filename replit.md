@@ -172,7 +172,9 @@ Simply push to the `main` branch - no build process required!
 
 **November 3, 2025 - Event Photos Integration with Carousel**
 - Added "Recent Events" section to homepage with interactive photo carousels
-- Integrated event photos from Club Fair (Oct 23) and Pizza Lego Night (Oct 22)
+- Integrated real event photos:
+  - **Pizza Lego Night (Oct 22)**: 4 photos showing student activities
+  - **Club Fair (Oct 23)**: 6 photos from booth and visitor engagement
 - Implemented full-featured carousel with:
   - Auto-slide (5-second intervals) with pause on hover/interaction
   - Previous/Next navigation buttons
@@ -182,6 +184,7 @@ Simply push to the `main` branch - no build process required!
   - Smooth fade transitions between photos
   - Accessible focus indicators for keyboard users
   - Smart hiding of controls for single-photo events
+- Converted HEIC photos to JPEG format for web compatibility
 - Styled event cards with hover effects, date badges, and metadata
 - Organized photos in structured directories: images/club-fair/ and images/pizza-night/
 
