@@ -103,7 +103,7 @@
                 </a>
                 <ul role="list" class="navigation-menu">
                   <li class="navigation-menu-item">
-                    <a href="about.html">
+                    <a href="#about">
                       <div class="navigation-link">
                         <span class="navigation-link-text">About</span>
                         <span class="navigation-link-glow"></span>
@@ -111,7 +111,15 @@
                     </a>
                   </li>
                   <li class="navigation-menu-item">
-                    <a href="team.html">
+                    <a href="#projects">
+                      <div class="navigation-link">
+                        <span class="navigation-link-text">Projects</span>
+                        <span class="navigation-link-glow"></span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="navigation-menu-item">
+                    <a href="#team">
                       <div class="navigation-link">
                         <span class="navigation-link-text">Team</span>
                         <span class="navigation-link-glow"></span>
@@ -119,7 +127,15 @@
                     </a>
                   </li>
                   <li class="navigation-menu-item">
-                    <a href="join.html">
+                    <a href="#sponsors">
+                      <div class="navigation-link">
+                        <span class="navigation-link-text">Sponsors</span>
+                        <span class="navigation-link-glow"></span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="navigation-menu-item">
+                    <a href="#contact">
                       <div class="navigation-link navigation-link-cta">
                         <span class="navigation-link-text">Join Us</span>
                         <span class="navigation-link-glow"></span>
@@ -189,7 +205,7 @@
                   </div>
                   <ul role="list" class="navigation-mobile-menu">
                     <li class="navigation-mobile-item">
-                      <a href="about.html">
+                      <a href="#about">
                         <div class="navigation-mobile-link">
                           <span class="navigation-mobile-link-number">01</span>
                           <span class="navigation-mobile-link-text">About</span>
@@ -197,19 +213,39 @@
                       </a>
                     </li>
                     <li class="navigation-mobile-item">
-                      <a href="team.html">
+                      <a href="#projects">
                         <div class="navigation-mobile-link">
                           <span class="navigation-mobile-link-number">02</span>
+                          <span class="navigation-mobile-link-text">
+                            Projects
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="navigation-mobile-item">
+                      <a href="#team">
+                        <div class="navigation-mobile-link">
+                          <span class="navigation-mobile-link-number">03</span>
                           <span class="navigation-mobile-link-text">Team</span>
                         </div>
                       </a>
                     </li>
                     <li class="navigation-mobile-item">
-                      <a href="join.html">
+                      <a href="#sponsors">
+                        <div class="navigation-mobile-link">
+                          <span class="navigation-mobile-link-number">04</span>
+                          <span class="navigation-mobile-link-text">
+                            Sponsors
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="navigation-mobile-item">
+                      <a href="#contact">
                         <div
                           class="navigation-mobile-link navigation-mobile-link-highlight"
                         >
-                          <span class="navigation-mobile-link-number">03</span>
+                          <span class="navigation-mobile-link-number">05</span>
                           <span class="navigation-mobile-link-text">
                             Join Us
                           </span>
