@@ -170,11 +170,19 @@ Simply push to the `main` branch - no build process required!
 
 ## Recent Changes
 
-**November 3, 2025 - Event Photos Integration**
-- Added "Recent Events" section to homepage
+**November 3, 2025 - Event Photos Integration with Carousel**
+- Added "Recent Events" section to homepage with interactive photo carousels
 - Integrated event photos from Club Fair (Oct 23) and Pizza Lego Night (Oct 22)
+- Implemented full-featured carousel with:
+  - Auto-slide (5-second intervals) with pause on hover/interaction
+  - Previous/Next navigation buttons
+  - Dot indicators for direct photo selection
+  - Keyboard navigation (arrow keys + tab/enter)
+  - Touch/swipe support for mobile devices
+  - Smooth fade transitions between photos
+  - Accessible focus indicators for keyboard users
+  - Smart hiding of controls for single-photo events
 - Styled event cards with hover effects, date badges, and metadata
-- Implemented responsive image layout for mobile devices
 - Organized photos in structured directories: images/club-fair/ and images/pizza-night/
 
 **November 3, 2025 - Complete Rebuild**
