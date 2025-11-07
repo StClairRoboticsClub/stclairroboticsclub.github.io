@@ -1,4 +1,4 @@
-modules = ["python-3.11"]
+modules = ["python-3.11", "postgresql-16"]
 [agent]
 expertMode = true
 
@@ -37,3 +37,11 @@ externalPort = 80
 [[ports]]
 localPort = 40777
 externalPort = 3000
+
+[[ports]]
+localPort = 42735
+externalPort = 3001
+
+[deployment]
+deploymentTarget = "vm"
+run = ["python3", "backend/app.py"]
