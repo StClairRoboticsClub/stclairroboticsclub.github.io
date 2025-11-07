@@ -41,10 +41,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add scroll effect to navigation
 let lastScroll = 0;
 const nav = document.querySelector('.nav');
+const scrollProgress = document.querySelector('.scroll-progress');
+const backToTop = document.querySelector('.back-to-top');
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
+  // Nav background effect
   if (currentScroll > 100) {
     nav.style.background = 'rgba(12, 13, 18, 0.95)';
     nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
@@ -53,8 +56,34 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = 'none';
   }
   
+  // Scroll progress bar
+  if (scrollProgress) {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (currentScroll / windowHeight) * 100;
+    scrollProgress.style.width = scrolled + '%';
+  }
+  
+  // Back to top button
+  if (backToTop) {
+    if (currentScroll > 600) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  }
+  
   lastScroll = currentScroll;
 });
+
+// Back to top button click
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
@@ -379,5 +408,167 @@ class Lightbox {
     this.lightboxCaption.textContent = img.alt;
   }
 }
+
+// Lead Capture Form Validation and Submission
+const joinForm = document.getElementById('joinForm');
+if (joinForm) {
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const nameError = document.getElementById('name-error');
+  const emailError = document.getElementById('email-error');
+  const formSuccess = document.getElementById('form-success');
+  
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  // Real-time validation
+  nameInput.addEventListener('blur', () => {
+    if (nameInput.value.trim() === '') {
+      nameError.textContent = 'Name is required';
+    } else {
+      nameError.textContent = '';
+    }
+  });
+  
+  emailInput.addEventListener('blur', () => {
+    if (emailInput.value.trim() === '') {
+      emailError.textContent = 'Email is required';
+    } else if (!emailRegex.test(emailInput.value)) {
+      emailError.textContent = 'Please enter a valid email address';
+    } else {
+      emailError.textContent = '';
+    }
+  });
+  
+  // Form submission
+  joinForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // Clear previous errors
+    nameError.textContent = '';
+    emailError.textContent = '';
+    formSuccess.classList.remove('show');
+    
+    // Validate
+    let isValid = true;
+    
+    if (nameInput.value.trim() === '') {
+      nameError.textContent = 'Name is required';
+      isValid = false;
+    }
+    
+    if (emailInput.value.trim() === '') {
+      emailError.textContent = 'Email is required';
+      isValid = false;
+    } else if (!emailRegex.test(emailInput.value)) {
+      emailError.textContent = 'Please enter a valid email address';
+      isValid = false;
+    }
+    
+    if (!isValid) return;
+    
+    // Get form data
+    const formData = new FormData(joinForm);
+    
+    // Try Formspree submission first (if configured)
+    const formspreeAction = joinForm.getAttribute('data-formspree-action');
+    
+    // Check if Formspree is configured (not placeholder)
+    if (formspreeAction && !formspreeAction.includes('YOUR_FORM_ID')) {
+      try {
+        const response = await fetch(formspreeAction, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          formSuccess.classList.add('show');
+          joinForm.reset();
+          return;
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        console.error('Formspree error, falling back to mailto:', error);
+        // Fall through to mailto fallback
+      }
+    }
+    
+    // Use mailto fallback (works immediately without backend)
+    mailtoFallback(formData);
+  });
+  
+  // Mailto fallback function
+  function mailtoFallback(formData) {
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const interests = formData.get('interests');
+    
+    const subject = encodeURIComponent('New Club Interest Form Submission');
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nInterests: ${interests || 'Not specified'}\n\nPlease note: This is an automated fallback email as the form backend is not configured.`
+    );
+    
+    window.location.href = `mailto:contact.info@stclairroboticsclub.ca?subject=${subject}&body=${body}`;
+    
+    // Show success message after a brief delay
+    setTimeout(() => {
+      formSuccess.classList.add('show');
+      joinForm.reset();
+    }, 1000);
+  }
+}
+
+// Analytics Hooks - Click Tracking
+// Note: Placeholder for GA4 or other analytics. Currently logs to console.
+// To enable Google Analytics 4, add your gtag.js script and uncomment the gtag calls below.
+
+// Track Hero CTA clicks
+document.querySelectorAll('.hero .btn').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const buttonText = button.textContent.trim();
+    console.log('Analytics: Hero CTA clicked -', buttonText);
+    
+    // Uncomment when GA4 is configured:
+    // gtag('event', 'cta_click', {
+    //   'event_category': 'engagement',
+    //   'event_label': buttonText,
+    //   'value': 'hero'
+    // });
+  });
+});
+
+// Track outbound Discord links
+document.querySelectorAll('a[href*="discord.gg"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    console.log('Analytics: Discord link clicked from', window.location.pathname);
+    
+    // Uncomment when GA4 is configured:
+    // gtag('event', 'outbound_click', {
+    //   'event_category': 'engagement',
+    //   'event_label': 'Discord',
+    //   'value': window.location.pathname
+    // });
+  });
+});
+
+// Track outbound Instagram links
+document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    console.log('Analytics: Instagram link clicked from', window.location.pathname);
+    
+    // Uncomment when GA4 is configured:
+    // gtag('event', 'outbound_click', {
+    //   'event_category': 'engagement',
+    //   'event_label': 'Instagram',
+    //   'value': window.location.pathname
+    // });
+  });
+});
+
+// Track Join form submissions (already tracked in form handler above)
 
 console.log('St. Clair Robotics Club - Website loaded successfully!');

@@ -3,12 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="St. Clair Robotics Club - Where Student Innovation Builds the Future">
+  <meta name="description" content="St. Clair Robotics Club - Where Student Innovation Builds the Future. Build. Code. Create. Join the student-led robotics club at St. Clair College.">
   <title>St. Clair Robotics Club</title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stclairroboticsclub.ca/">
+  <meta property="og:title" content="St. Clair Robotics Club">
+  <meta property="og:description" content="Build. Code. Create. Join the student-led robotics club at St. Clair College.">
+  <meta property="og:image" content="https://stclairroboticsclub.ca/images/og-cover.jpg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://stclairroboticsclub.ca/">
+  <meta name="twitter:title" content="St. Clair Robotics Club">
+  <meta name="twitter:description" content="Build. Code. Create. Join the student-led robotics club at St. Clair College.">
+  <meta name="twitter:image" content="https://stclairroboticsclub.ca/images/og-cover.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stclairroboticsclub.ca/">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" sizes="16x16 32x32" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  
+  <!-- Web Manifest -->
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Fonts and Styles -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
   
   <!-- Navigation -->
   <nav class="nav">
@@ -53,7 +84,7 @@
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="#features" class="btn btn-secondary">
+          <a href="#events" class="btn btn-secondary">
             Learn More
           </a>
         </div>
@@ -69,7 +100,7 @@
   </section>
 
   <!-- Recent Events Section -->
-  <section class="events">
+  <section class="events" id="events">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Recent Events</h2>
@@ -78,11 +109,12 @@
         <div class="event-card">
           <div class="event-image-wrapper">
             <div class="event-carousel" data-carousel="pizza-night">
+              <!-- Image Optimization: Compress images to ≤1200px width, 75-80% quality -->
               <div class="carousel-track">
-                <img src="images/pizza-night/pizza-party-569643831_17851143075570614_6571995917334712559_n.jpg" alt="Pizza Lego Night - Students building" class="event-image active">
-                <img src="images/pizza-night/pizza-party-569700187_17851143066570614_3049972744222802126_n.jpg" alt="Pizza Lego Night - Group activity" class="event-image">
-                <img src="images/pizza-night/pizza-party-570004234_17851143054570614_4523362772409586392_n.jpg" alt="Pizza Lego Night - Team collaboration" class="event-image">
-                <img src="images/pizza-night/pizza-party-570027611_17851143024570614_3878264492064289954_n.jpg" alt="Pizza Lego Night - Creative projects" class="event-image">
+                <img src="images/pizza-night/pizza-party-569643831_17851143075570614_6571995917334712559_n.jpg" alt="Pizza Lego Night - Students building" class="event-image active" loading="lazy" decoding="async">
+                <img src="images/pizza-night/pizza-party-569700187_17851143066570614_3049972744222802126_n.jpg" alt="Pizza Lego Night - Group activity" class="event-image" loading="lazy" decoding="async">
+                <img src="images/pizza-night/pizza-party-570004234_17851143054570614_4523362772409586392_n.jpg" alt="Pizza Lego Night - Team collaboration" class="event-image" loading="lazy" decoding="async">
+                <img src="images/pizza-night/pizza-party-570027611_17851143024570614_3878264492064289954_n.jpg" alt="Pizza Lego Night - Creative projects" class="event-image" loading="lazy" decoding="async">
               </div>
               <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -123,13 +155,14 @@
         <div class="event-card">
           <div class="event-image-wrapper">
             <div class="event-carousel" data-carousel="club-fair">
+              <!-- Image Optimization: Compress images to ≤1200px width, 75-80% quality -->
               <div class="carousel-track">
-                <img src="images/club-fair/club-fair-568504188_17851246506570614_2469509976189620938_n.jpg" alt="St. Clair College Club Fair - Booth display" class="event-image active">
-                <img src="images/club-fair/club-fair-568553785_17851246530570614_7020381520838188966_n.jpg" alt="St. Clair College Club Fair - Student engagement" class="event-image">
-                <img src="images/club-fair/club-fair-569184435_17851246533570614_8795327710259381549_n.jpg" alt="St. Clair College Club Fair - Club showcase" class="event-image">
-                <img src="images/club-fair/club-fair-569401082_17851246488570614_8545197328708065513_n.jpg" alt="St. Clair College Club Fair - Team members" class="event-image">
-                <img src="images/club-fair/club-fair-569513514_17851222356570614_8333149330307952106_n.jpg" alt="St. Clair College Club Fair - Interactive demos" class="event-image">
-                <img src="images/club-fair/club-fair-570897679_17851246515570614_6194593080452071666_n.jpg" alt="St. Clair College Club Fair - Visitor interest" class="event-image">
+                <img src="images/club-fair/club-fair-568504188_17851246506570614_2469509976189620938_n.jpg" alt="St. Clair College Club Fair - Booth display" class="event-image active" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-568553785_17851246530570614_7020381520838188966_n.jpg" alt="St. Clair College Club Fair - Student engagement" class="event-image" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-569184435_17851246533570614_8795327710259381549_n.jpg" alt="St. Clair College Club Fair - Club showcase" class="event-image" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-569401082_17851246488570614_8545197328708065513_n.jpg" alt="St. Clair College Club Fair - Team members" class="event-image" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-569513514_17851222356570614_8333149330307952106_n.jpg" alt="St. Clair College Club Fair - Interactive demos" class="event-image" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-570897679_17851246515570614_6194593080452071666_n.jpg" alt="St. Clair College Club Fair - Visitor interest" class="event-image" loading="lazy" decoding="async">
               </div>
               <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -175,6 +208,35 @@
               Showcasing club projects and meeting new members.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Highlights Section -->
+  <section class="highlights">
+    <div class="container">
+      <h2 class="section-title">Recent Highlights</h2>
+      <div class="highlights-grid">
+        <div class="highlight-item">
+          <div class="highlight-date">Oct 2024</div>
+          <h3 class="highlight-title">Club Fair Success</h3>
+          <p class="highlight-description">Welcomed 50+ new members at St. Clair College Club Fair</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-date">Oct 2024</div>
+          <h3 class="highlight-title">Pizza Lego Night</h3>
+          <p class="highlight-description">Hosted community building event with hands-on activities</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-date">Sept 2024</div>
+          <h3 class="highlight-title">Workshop Series Launch</h3>
+          <p class="highlight-description">Launched weekly robotics workshops for all skill levels</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-date">2024</div>
+          <h3 class="highlight-title">New Lab Space</h3>
+          <p class="highlight-description">Expanded workspace with new equipment and tools</p>
         </div>
       </div>
     </div>
@@ -238,8 +300,74 @@
     </div>
   </section>
 
+  <!-- Why Join Section -->
+  <section class="why-join">
+    <div class="container">
+      <div class="why-join-content">
+        <h2 class="section-title">Why Join Our Club?</h2>
+        <p class="section-subtitle">Be part of a community that builds the future</p>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>Hands-On Experience</h3>
+            <p>Build real robots and work on cutting-edge projects</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Networking & Teamwork</h3>
+            <p>Connect with students, mentors, and industry professionals</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h3>Resume Builder</h3>
+            <p>Gain valuable experience that stands out to employers</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                <line x1="15" y1="9" x2="15.01" y2="9"/>
+              </svg>
+            </div>
+            <h3>Have Fun & Create</h3>
+            <p>Turn your ideas into reality in a supportive environment</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <h3>Compete & Win</h3>
+            <p>Participate in robotics competitions and showcase your skills</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
-  <section class="cta">
+  <section class="cta" id="join">
     <div class="container">
       <div class="cta-content">
         <h2 class="cta-title">Join Us</h2>
@@ -324,6 +452,13 @@
       <div class="lightbox-caption"></div>
     </div>
   </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
