@@ -1,6 +1,6 @@
-# 🚀 Quick Start - Deploy to GitHub Pages
+# Quick Start - Deploy to GitHub Pages
 
-## Current Status: ✅ READY TO DEPLOY
+## Current Status: READY TO DEPLOY
 
 Your website is fully prepared. Follow these simple steps:
 
@@ -24,7 +24,7 @@ That's it for the code! Now configure GitHub Pages...
 4. Under "Build and deployment":
    - **Source**: Deploy from a branch
    - **Branch**: `main`
-   - **Folder**: `/docs` ⚠️ **IMPORTANT**
+   - **Folder**: `/docs` **IMPORTANT**
 5. Click **Save**
 
 ---
@@ -33,7 +33,7 @@ That's it for the code! Now configure GitHub Pages...
 
 - Wait 1-2 minutes for GitHub Actions to deploy
 - Visit: **https://stclairroboticsclub.ca**
-- Your site is live! 🎉
+- Your site is live!
 
 ---
 
@@ -61,8 +61,8 @@ git push origin main
 - 📖 See `DEPLOYMENT.md` for detailed instructions
 - 📖 See `CONTRIBUTING.md` for development guide
 - 📖 See `README.md` for project overview
-- 💬 Discord: https://discord.gg/gEC8P2Dfqv
+- Discord: https://discord.gg/gEC8P2Dfqv
 
 ---
 
-**You're all set!** The hard work is done. Just push and deploy! 🚀
+**You're all set!** The hard work is done. Just push and deploy!

@@ -1,27 +1,24 @@
-// Mobile Navigation Toggle
+// Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
 if (navToggle) {
   navToggle.addEventListener('click', () => {
-    const isActive = navToggle.classList.toggle('active');
+    navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
-    
-    navToggle.setAttribute('aria-expanded', isActive);
   });
 
-  // Close menu when clicking nav links
+  // Close menu when clicking links
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
-// Smooth scroll for anchor links
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
@@ -29,17 +26,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     }
   });
 });
 
-// Add scroll effect to navigation
-let lastScroll = 0;
+// Nav effects on scroll
 const nav = document.querySelector('.nav');
 const scrollProgress = document.querySelector('.scroll-progress');
 const backToTop = document.querySelector('.back-to-top');
@@ -47,7 +40,7 @@ const backToTop = document.querySelector('.back-to-top');
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
-  // Nav background effect
+  // Nav background
   if (currentScroll > 100) {
     nav.style.background = 'rgba(12, 13, 18, 0.95)';
     nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
@@ -56,7 +49,7 @@ window.addEventListener('scroll', () => {
     nav.style.boxShadow = 'none';
   }
   
-  // Scroll progress bar
+  // Progress bar
   if (scrollProgress) {
     const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (currentScroll / windowHeight) * 100;
@@ -71,21 +64,16 @@ window.addEventListener('scroll', () => {
       backToTop.classList.remove('visible');
     }
   }
-  
-  lastScroll = currentScroll;
 });
 
-// Back to top button click
+// Back to top
 if (backToTop) {
   backToTop.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
-// Intersection Observer for fade-in animations
+// Fade in animations
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -100,7 +88,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe feature cards and other elements
 document.querySelectorAll('.feature-card').forEach(card => {
   card.style.opacity = '0';
   card.style.transform = 'translateY(30px)';
@@ -108,7 +95,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
   observer.observe(card);
 });
 
-// Add active page indicator to navigation
+// Highlight active page in nav
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-link').forEach(link => {
   if (link.getAttribute('href') === currentPage) {
@@ -116,7 +103,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
   }
 });
 
-// Event Photo Carousel
+// Carousel for event images
 class EventCarousel {
   constructor(carouselElement) {
     this.carousel = carouselElement;
@@ -126,116 +113,53 @@ class EventCarousel {
     this.nextBtn = this.carousel.querySelector('.carousel-btn-next');
     this.dots = Array.from(this.carousel.querySelectorAll('.carousel-dot'));
     this.currentIndex = 0;
-    this.autoSlideInterval = null;
-    this.autoSlideDelay = 5000; // 5 seconds
     
-    // Only initialize if there are multiple images
     if (this.images.length > 1) {
       this.init();
     }
   }
   
   init() {
-    // Add event listeners for buttons
+    // Button clicks
     if (this.prevBtn) {
-      this.prevBtn.addEventListener('click', () => {
-        this.stopAutoSlide();
-        this.prev();
-        this.startAutoSlide();
-      });
+      this.prevBtn.addEventListener('click', () => this.prev());
     }
     if (this.nextBtn) {
-      this.nextBtn.addEventListener('click', () => {
-        this.stopAutoSlide();
-        this.next();
-        this.startAutoSlide();
-      });
+      this.nextBtn.addEventListener('click', () => this.next());
     }
     
-    // Add event listeners for dots
+    // Dot clicks
     this.dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        this.stopAutoSlide();
-        this.goToSlide(index);
-        this.startAutoSlide();
-      });
+      dot.addEventListener('click', () => this.goToSlide(index));
     });
     
-    // Keyboard navigation
-    this.carousel.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        this.stopAutoSlide();
-        this.prev();
-        this.startAutoSlide();
-      }
-      if (e.key === 'ArrowRight') {
-        this.stopAutoSlide();
-        this.next();
-        this.startAutoSlide();
-      }
-    });
-    
-    // Touch/swipe support
+    // Touch swipe
     let touchStartX = 0;
     let touchEndX = 0;
     
     this.carousel.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
-      this.stopAutoSlide();
     });
     
     this.carousel.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      this.handleSwipe(touchStartX, touchEndX);
-      this.startAutoSlide();
-    });
-    
-    // Pause auto-slide on hover
-    this.carousel.addEventListener('mouseenter', () => this.stopAutoSlide());
-    this.carousel.addEventListener('mouseleave', () => this.startAutoSlide());
-    
-    // Start auto-slide
-    this.startAutoSlide();
-  }
-  
-  startAutoSlide() {
-    if (this.images.length <= 1) return;
-    
-    this.stopAutoSlide();
-    this.autoSlideInterval = setInterval(() => {
-      this.next();
-    }, this.autoSlideDelay);
-  }
-  
-  stopAutoSlide() {
-    if (this.autoSlideInterval) {
-      clearInterval(this.autoSlideInterval);
-      this.autoSlideInterval = null;
-    }
-  }
-  
-  handleSwipe(startX, endX) {
-    const swipeThreshold = 50;
-    const diff = startX - endX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        this.next();
-      } else {
-        this.prev();
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          this.next();
+        } else {
+          this.prev();
+        }
       }
-    }
+    });
   }
   
   goToSlide(index) {
-    // Remove active class from current image and dot
     this.images[this.currentIndex].classList.remove('active');
     this.dots[this.currentIndex].classList.remove('active');
     
-    // Update current index
     this.currentIndex = index;
     
-    // Add active class to new image and dot
     this.images[this.currentIndex].classList.add('active');
     this.dots[this.currentIndex].classList.add('active');
   }
@@ -251,21 +175,20 @@ class EventCarousel {
   }
 }
 
-// Initialize all carousels on the page
+// Initialize carousels
 document.addEventListener('DOMContentLoaded', () => {
   const carousels = document.querySelectorAll('.event-carousel');
   carousels.forEach(carousel => {
     new EventCarousel(carousel);
   });
   
-  // Initialize lightbox only if it exists on the page
   const lightboxElement = document.getElementById('lightbox');
   if (lightboxElement) {
     new Lightbox();
   }
 });
 
-// Lightbox for full-size image viewing
+// Lightbox for viewing images
 class Lightbox {
   constructor() {
     this.lightbox = document.getElementById('lightbox');
@@ -280,14 +203,12 @@ class Lightbox {
     this.currentCarousel = null;
     this.currentImages = [];
     this.currentIndex = 0;
-    this.previousFocus = null;
-    this.focusableElements = null;
     
     this.init();
   }
   
   init() {
-    // Add click listeners to all carousel images
+    // Click on carousel images to open lightbox
     const allCarousels = document.querySelectorAll('.event-carousel');
     allCarousels.forEach(carousel => {
       const images = carousel.querySelectorAll('.event-image');
@@ -300,10 +221,7 @@ class Lightbox {
       });
     });
     
-    // Close button
     this.closeBtn.addEventListener('click', () => this.close());
-    
-    // Navigation buttons
     this.prevBtn.addEventListener('click', () => this.prev());
     this.nextBtn.addEventListener('click', () => this.next());
     
@@ -343,52 +261,11 @@ class Lightbox {
       this.prevBtn.style.display = 'flex';
       this.nextBtn.style.display = 'flex';
     }
-    
-    // Focus management for accessibility
-    this.previousFocus = document.activeElement;
-    this.closeBtn.focus();
-    this.trapFocus();
   }
   
   close() {
     this.lightbox.classList.remove('active');
     document.body.style.overflow = '';
-    
-    // Restore focus to previously focused element
-    if (this.previousFocus && this.previousFocus.focus) {
-      this.previousFocus.focus();
-    }
-  }
-  
-  trapFocus() {
-    // Get all focusable elements in the lightbox
-    const focusableSelectors = [
-      this.closeBtn,
-      this.prevBtn.style.display !== 'none' ? this.prevBtn : null,
-      this.nextBtn.style.display !== 'none' ? this.nextBtn : null
-    ].filter(el => el !== null);
-    
-    this.focusableElements = focusableSelectors;
-    
-    // Trap focus within lightbox
-    this.lightbox.addEventListener('keydown', (e) => {
-      if (e.key !== 'Tab') return;
-      
-      const firstElement = this.focusableElements[0];
-      const lastElement = this.focusableElements[this.focusableElements.length - 1];
-      
-      if (e.shiftKey) {
-        if (document.activeElement === firstElement) {
-          e.preventDefault();
-          lastElement.focus();
-        }
-      } else {
-        if (document.activeElement === lastElement) {
-          e.preventDefault();
-          firstElement.focus();
-        }
-      }
-    });
   }
   
   next() {
@@ -409,53 +286,11 @@ class Lightbox {
   }
 }
 
-// Analytics Hooks - Click Tracking
-// Note: Placeholder for GA4 or other analytics. Currently logs to console.
-// To enable Google Analytics 4, add your gtag.js script and uncomment the gtag calls below.
-
-// Track Hero CTA clicks
+// Track button clicks for analytics (placeholder)
 document.querySelectorAll('.hero .btn').forEach(button => {
-  button.addEventListener('click', (e) => {
-    const buttonText = button.textContent.trim();
-    console.log('Analytics: Hero CTA clicked -', buttonText);
-    
-    // Uncomment when GA4 is configured:
-    // gtag('event', 'cta_click', {
-    //   'event_category': 'engagement',
-    //   'event_label': buttonText,
-    //   'value': 'hero'
-    // });
+  button.addEventListener('click', () => {
+    console.log('CTA clicked:', button.textContent.trim());
   });
 });
 
-// Track outbound Discord links
-document.querySelectorAll('a[href*="discord.gg"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    console.log('Analytics: Discord link clicked from', window.location.pathname);
-    
-    // Uncomment when GA4 is configured:
-    // gtag('event', 'outbound_click', {
-    //   'event_category': 'engagement',
-    //   'event_label': 'Discord',
-    //   'value': window.location.pathname
-    // });
-  });
-});
-
-// Track outbound Instagram links
-document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    console.log('Analytics: Instagram link clicked from', window.location.pathname);
-    
-    // Uncomment when GA4 is configured:
-    // gtag('event', 'outbound_click', {
-    //   'event_category': 'engagement',
-    //   'event_label': 'Instagram',
-    //   'value': window.location.pathname
-    // });
-  });
-});
-
-// Track Join form submissions (already tracked in form handler above)
-
-console.log('St. Clair Robotics Club - Website loaded successfully!');
+console.log('St. Clair Robotics Club website loaded!');
