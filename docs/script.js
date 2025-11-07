@@ -469,36 +469,57 @@ if (joinForm) {
     
     // Get form data
     const formData = new FormData(joinForm);
+    const formObject = Object.fromEntries(formData.entries());
     
-    // Try Formspree submission first (if configured)
-    const formspreeAction = joinForm.getAttribute('data-formspree-action');
-    
-    // Check if Formspree is configured (not placeholder)
-    if (formspreeAction && !formspreeAction.includes('YOUR_FORM_ID')) {
-      try {
-        const response = await fetch(formspreeAction, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        
-        if (response.ok) {
-          formSuccess.classList.add('show');
-          joinForm.reset();
-          return;
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        console.error('Formspree error, falling back to mailto:', error);
-        // Fall through to mailto fallback
+    // Try custom backend first
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formObject)
+      });
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Analytics: Form submitted successfully', result);
+        formSuccess.classList.add('show');
+        joinForm.reset();
+        return;
+      } else {
+        throw new Error('Backend submission failed');
       }
+    } catch (error) {
+      console.error('Backend error, trying Formspree fallback:', error);
+      
+      // Try Formspree as fallback
+      const formspreeAction = joinForm.getAttribute('data-formspree-action');
+      
+      if (formspreeAction && !formspreeAction.includes('YOUR_FORM_ID')) {
+        try {
+          const response = await fetch(formspreeAction, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          if (response.ok) {
+            formSuccess.classList.add('show');
+            joinForm.reset();
+            return;
+          }
+        } catch (formspreeError) {
+          console.error('Formspree also failed:', formspreeError);
+        }
+      }
+      
+      // Last resort: mailto fallback
+      mailtoFallback(formData);
     }
-    
-    // Use mailto fallback (works immediately without backend)
-    mailtoFallback(formData);
   });
   
   // Mailto fallback function
