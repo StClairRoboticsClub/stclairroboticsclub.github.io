@@ -129,12 +129,12 @@ Preferred communication style: Simple, everyday language.
 ### Email Contact
 
 **Email Address**: contact.info@stclairroboticsclub.ca
-- **Implementation**: `mailto:` links in HTML and as form fallback
-- **Form Handling**: Join form on `join.html` uses mailto as primary action with optional Formspree enhancement via `data-formspree-action` attribute
-  - Guaranteed working submission path (mailto always works)
-  - Formspree can be configured by replacing placeholder ID in `data-formspree-action`
-  - Inline validation for required fields, email format, and student ID format
+- **Implementation**: `mailto:` links in HTML
+- **Form Handling**: Join form on `join.html` uses Formspree (ID: xovpgzdq) for form submissions
+  - Formspree integration active and configured
+  - Inline validation for required fields and email format
   - Success message displays after submission
+  - Discord emphasized as primary contact method with prominent CTA buttons
 
 ### CDN Resources
 
@@ -168,13 +168,14 @@ Preferred communication style: Simple, everyday language.
 ### Recent Enhancements (November 2025)
 
 **UX & Engagement Improvements**:
-1. **Homepage Content**: Added "Recent Highlights" section (4 milestones) and "Why Join Our Club?" section (5 key benefits)
+1. **Homepage Content**: Streamlined content focusing on Recent Events photo carousel and "Why Join Our Club?" section
 2. **Navigation**: Sticky header with backdrop blur, scroll progress indicator, smooth anchor scrolling
-3. **Lead Capture**: Working join form with validation, optional Formspree integration, guaranteed mailto fallback
+3. **Lead Capture**: Working join form with Formspree integration (xovpgzdq), Discord-first funnel strategy
 4. **Performance**: Lazy loading and async decoding on event images, compression guidance in HTML comments
 5. **Accessibility**: Comprehensive prefers-reduced-motion support, enhanced keyboard focus styles
 6. **Social Sharing**: Complete OG/Twitter metadata, canonical URLs, favicon references on all pages
 7. **Analytics Ready**: Event tracking hooks for CTAs and outbound links (console placeholders for GA4)
+8. **Funnel Strategy**: Discord and email emphasized as primary contact methods with prominent CTAs on join page
 
 ### Next Steps for Production
 
@@ -187,9 +188,7 @@ Preferred communication style: Simple, everyday language.
 
 2. **Optimize Images**: Compress event photos to ≤1200px width at 75-80% quality (see HTML comments in `index.html`)
 
-3. **Configure Formspree** (Optional): Replace `YOUR_FORM_ID` in `join.html` `data-formspree-action` attribute with actual Formspree endpoint
-
-4. **Add Analytics**: Replace console.log tracking calls in `script.js` with Google Analytics 4 or preferred analytics service
+3. **Add Analytics**: Replace console.log tracking calls in `script.js` with Google Analytics 4 or preferred analytics service
 
 5. **Create OG Cover Image**: Add `docs/images/og-cover.jpg` (1200x630px) for social sharing preview
 
