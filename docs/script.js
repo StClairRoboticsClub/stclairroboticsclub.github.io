@@ -469,78 +469,31 @@ if (joinForm) {
     
     // Get form data
     const formData = new FormData(joinForm);
-    const formObject = Object.fromEntries(formData.entries());
     
-    // Try custom backend first
+    // Submit to Formspree
     try {
-      const response = await fetch('/api/submit-form', {
+      const response = await fetch(joinForm.action, {
         method: 'POST',
+        body: formData,
         headers: {
-          'Content-Type': 'application/json',
           'Accept': 'application/json'
-        },
-        body: JSON.stringify(formObject)
+        }
       });
       
       if (response.ok) {
-        const result = await response.json();
-        console.log('Analytics: Form submitted successfully', result);
+        console.log('Analytics: Form submitted successfully via Formspree');
         formSuccess.classList.add('show');
         joinForm.reset();
-        return;
       } else {
-        throw new Error('Backend submission failed');
+        throw new Error('Form submission failed');
       }
     } catch (error) {
-      console.error('Backend error, trying Formspree fallback:', error);
-      
-      // Try Formspree as fallback
-      const formspreeAction = joinForm.getAttribute('data-formspree-action');
-      
-      if (formspreeAction && !formspreeAction.includes('YOUR_FORM_ID')) {
-        try {
-          const response = await fetch(formspreeAction, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-          
-          if (response.ok) {
-            formSuccess.classList.add('show');
-            joinForm.reset();
-            return;
-          }
-        } catch (formspreeError) {
-          console.error('Formspree also failed:', formspreeError);
-        }
-      }
-      
-      // Last resort: mailto fallback
-      mailtoFallback(formData);
+      console.error('Formspree error:', error);
+      // Allow natural form submission as fallback (will use action URL)
+      joinForm.submit();
     }
   });
   
-  // Mailto fallback function
-  function mailtoFallback(formData) {
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const interests = formData.get('interests');
-    
-    const subject = encodeURIComponent('New Club Interest Form Submission');
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nInterests: ${interests || 'Not specified'}\n\nPlease note: This is an automated fallback email as the form backend is not configured.`
-    );
-    
-    window.location.href = `mailto:contact.info@stclairroboticsclub.ca?subject=${subject}&body=${body}`;
-    
-    // Show success message after a brief delay
-    setTimeout(() => {
-      formSuccess.classList.add('show');
-      joinForm.reset();
-    }, 1000);
-  }
 }
 
 // Analytics Hooks - Click Tracking
