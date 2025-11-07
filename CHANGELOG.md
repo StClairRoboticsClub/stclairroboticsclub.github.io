@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2025-11-03
 
-### Major Release - Complete Website Rebuild
+### 🎉 Major Release - Complete Website Rebuild
 
 A complete redesign and rebuild of the St. Clair Robotics Club website with modern features, improved structure, and enhanced user experience.
 
@@ -88,7 +88,7 @@ A complete redesign and rebuild of the St. Clair Robotics Club website with mode
 
 ### Breaking Changes
 
-**This is a major version update with breaking changes from v1.0.0:**
+⚠️ **This is a major version update with breaking changes from v1.0.0:**
 
 - Complete UI/UX redesign - no visual compatibility with v1.0.0
 - New file structure with `/docs` folder - paths have changed

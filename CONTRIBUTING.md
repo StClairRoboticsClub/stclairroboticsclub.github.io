@@ -4,7 +4,7 @@ Thank you for contributing to the St. Clair Robotics Club website! This guide wi
 
 ---
 
-## Quick Start
+## 🚀 Quick Start
 
 1. **Clone the repository**
    ```bash
@@ -50,7 +50,7 @@ docs/
 
 ---
 
-## Common Tasks
+## 📝 Common Tasks
 
 ### Adding Team Member Photos
 
@@ -96,7 +96,7 @@ docs/
 
 ---
 
-## Style Guide
+## 🎨 Style Guide
 
 ### Colors
 - **Primary (St. Clair Green)**: `#006341` / `var(--color-primary)`
@@ -115,7 +115,7 @@ docs/
 
 ---
 
-## Testing Checklist
+## ✅ Testing Checklist
 
 Before pushing changes:
 
@@ -152,7 +152,7 @@ Changes pushed to `main` branch automatically deploy to GitHub Pages within 1-2 
 
 ---
 
-## Best Practices
+## 💡 Best Practices
 
 - **Write semantic HTML** - Use appropriate tags (`<header>`, `<nav>`, `<section>`, etc.)
 - **Keep accessibility in mind** - Add alt text, ARIA labels, keyboard navigation
@@ -172,4 +172,4 @@ Contact the team:
 
 ---
 
-Thank you for contributing to the St. Clair Robotics Club!
+Thank you for contributing to the St. Clair Robotics Club! 🤖

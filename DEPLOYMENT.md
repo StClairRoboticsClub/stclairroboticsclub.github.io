@@ -4,7 +4,7 @@ This checklist ensures smooth deployment to GitHub Pages at https://stclairrobot
 
 ---
 
-## Pre-Deployment Verification (COMPLETED)
+## ✅ Pre-Deployment Verification (COMPLETED)
 
 All items below have been verified and are ready for deployment:
 
@@ -40,7 +40,7 @@ All items below have been verified and are ready for deployment:
 
 ---
 
-## Deployment Steps
+## 🚀 Deployment Steps
 
 ### Step 1: Review Changes
 
@@ -78,7 +78,7 @@ If this is the first deployment:
 3. Configure:
    - **Source**: Deploy from a branch
    - **Branch**: `main`
-   - **Folder**: `/docs` **Important: Must be /docs**
+   - **Folder**: `/docs` ⚠️ **Important: Must be /docs**
 4. Click **Save**
 5. Wait 1-2 minutes for deployment
 
@@ -125,7 +125,7 @@ git push origin main
 
 ---
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 ### Site Not Updating After Push?
 - Wait 2-3 minutes for GitHub Actions to complete
@@ -157,7 +157,7 @@ git push origin main
 
 ---
 
-## Post-Deployment Monitoring
+## 📊 Post-Deployment Monitoring
 
 After deployment, monitor:
 
@@ -181,9 +181,9 @@ If you encounter issues:
 
 ---
 
-## Project Status
+## ✨ Project Status
 
-**Current Status**: READY FOR DEPLOYMENT
+**Current Status**: ✅ READY FOR DEPLOYMENT
 
 All pre-deployment checks have been completed successfully. The project is polished, documented, and tested. You can now proceed with pushing to GitHub and deploying to GitHub Pages.
 

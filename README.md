@@ -1,4 +1,4 @@
-# St. Clair Robotics Club Website
+# St. Clair Robotics Club Website 🤖
 
 Official website for the **St. Clair College Robotics Club** - hosted on GitHub Pages at [stclairroboticsclub.ca](https://stclairroboticsclub.ca)
 
@@ -21,7 +21,7 @@ The St. Clair Robotics Club is a student-led organization focused on hands-on ro
 
 ---
 
-## Repository Structure
+## 💻 Repository Structure
 
 ```
 stclairroboticsclub-dev/
@@ -43,7 +43,7 @@ stclairroboticsclub-dev/
 
 ---
 
-## Local Development
+## 🚀 Local Development
 
 ### Running Locally
 
@@ -96,7 +96,7 @@ GitHub Pages automatically deploys changes within 1-2 minutes.
 
 ---
 
-## Website Features
+## 🎨 Website Features
 
 ### Pages
 - **Home** (`index.html`): Hero section, features, recent events
@@ -119,7 +119,7 @@ GitHub Pages automatically deploys changes within 1-2 minutes.
 
 ---
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 **Site not updating?**
 - Check GitHub Actions tab for deployment status
@@ -146,6 +146,6 @@ GitHub Pages automatically deploys changes within 1-2 minutes.
 
 ---
 
-## License
+## 📝 License
 
 This project is licensed under the terms specified in the LICENSE file.
