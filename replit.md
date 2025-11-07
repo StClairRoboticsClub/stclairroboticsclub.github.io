@@ -130,11 +130,10 @@ Preferred communication style: Simple, everyday language.
 
 **Email Address**: contact.info@stclairroboticsclub.ca
 - **Implementation**: `mailto:` links in HTML
-- **Form Handling**: Join form on `join.html` uses Formspree (ID: xovpgzdq) for form submissions
-  - Formspree integration active and configured
-  - Inline validation for required fields and email format
-  - Success message displays after submission
-  - Discord emphasized as primary contact method with prominent CTA buttons
+- **Lead Capture Strategy**: Join page features prominent Discord and Email CTA buttons only
+  - No form - students directed to join Discord or email directly
+  - Discord is primary contact method with prominent placement
+  - Instagram link included for social media engagement
 
 ### CDN Resources
 
@@ -170,12 +169,12 @@ Preferred communication style: Simple, everyday language.
 **UX & Engagement Improvements**:
 1. **Homepage Content**: Streamlined content focusing on Recent Events photo carousel and "Why Join Our Club?" section
 2. **Navigation**: Sticky header with backdrop blur, scroll progress indicator, smooth anchor scrolling
-3. **Lead Capture**: Working join form with Formspree integration (xovpgzdq), Discord-first funnel strategy
+3. **Lead Capture**: Discord-first funnel - large CTA buttons for Discord and Email, no form required
 4. **Performance**: Lazy loading and async decoding on event images, compression guidance in HTML comments
 5. **Accessibility**: Comprehensive prefers-reduced-motion support, enhanced keyboard focus styles
 6. **Social Sharing**: Complete OG/Twitter metadata, canonical URLs, favicon references on all pages
 7. **Analytics Ready**: Event tracking hooks for CTAs and outbound links (console placeholders for GA4)
-8. **Funnel Strategy**: Discord and email emphasized as primary contact methods with prominent CTAs on join page
+8. **Funnel Strategy**: Join page only offers Discord and Email contact options - clean, simple, direct engagement path
 
 ### Next Steps for Production
 
@@ -195,6 +194,6 @@ Preferred communication style: Simple, everyday language.
 ### Database & Backend
 
 **Current State**: Fully static site, no database or server-side processing
-- Form submissions use mailto (guaranteed) with optional Formspree enhancement
+- No forms - direct engagement through Discord and email links only
 - All content managed through direct HTML editing
 - No CMS or admin interface required
