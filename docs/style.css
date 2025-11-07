@@ -1,8 +1,8 @@
 /* ===== CSS Variables ===== */
 :root {
-  /* Colors */
-  --color-primary: #006341;
-  --color-accent: #00b8ff;
+  /* Colors - St. Clair College Branding */
+  --color-primary: #78be20;      /* St. Clair green */
+  --color-accent: #00b8ff;       /* Robotics tech cyan */
   --color-bg: #0c0d12;
   --color-surface: #14151a;
   --color-surface-hover: #1a1b22;
