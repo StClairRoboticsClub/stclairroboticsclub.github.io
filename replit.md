@@ -28,7 +28,7 @@ Preferred communication style: Simple, everyday language.
 - Single JavaScript file (`script.js`) handles all interactivity across pages
 
 **Design System**:
-- **Color Palette**: Dark theme with St. Clair green (#006341) and robotics blue (#00b8ff)
+- **Color Palette**: Dark theme with St. Clair green (#78be20) and robotics blue (#00b8ff) - updated November 2025 to match official St. Clair College branding
 - **Typography**: Inter (body text) and Rajdhani (headings) from Google Fonts
 - **Component Pattern**: CSS class-based components with BEM-like naming conventions
 - **Responsive Strategy**: Mobile-first CSS with flexbox/grid layouts
@@ -175,6 +175,34 @@ Preferred communication style: Simple, everyday language.
 6. **Social Sharing**: Complete OG/Twitter metadata, canonical URLs, favicon references on all pages
 7. **Analytics Ready**: Event tracking hooks for CTAs and outbound links (console placeholders for GA4)
 8. **Funnel Strategy**: Join page only offers Discord and Email contact options - clean, simple, direct engagement path
+
+**Website Humanization (November 2025)**:
+Major content overhaul to remove AI-generated artifacts and establish authentic student voice:
+
+1. **Copywriting Transformation**:
+   - Hero section: Replaced generic "Innovation meets dedication" with "We're a team of St. Clair College students in Windsor building autonomous robots, competing in Ontario robotics competitions, and learning how machines think."
+   - About page: Rewrote with specific details (Room E-240, Tuesday meetings, ESP32 debates, first-year students learning to solder)
+   - Team bios: Humanized all leadership bios with personality and humor (servo budgeting, deadline reminders, documentation for memory)
+   - Footer tagline: Changed from "Build. Code. Create." to "Building robots, one servo at a time."
+
+2. **SEO & Geographic Context**:
+   - Added "Windsor, Ontario" and "Windsor, ON" to all page titles
+   - Updated meta descriptions with local keywords and authentic language
+   - Enhanced OG and Twitter card metadata with student-focused messaging
+   - Replaced generic taglines with location-specific, genuine student club voice
+
+3. **Brand Alignment**:
+   - Updated primary color from #006341 to #78be20 (official St. Clair College green)
+   - Applied consistently across gradients, links, and accent elements
+   - Maintained dark theme aesthetic while improving brand recognition
+
+4. **Content Authenticity**:
+   - Removed generic "Innovation/Excellence/Collaboration" buzzwords
+   - Replaced vague "Projects" section with specific technical details and personality
+   - Added genuine student experiences and club culture references
+   - Created HUMANIZATION_AUDIT.md (233-line comprehensive audit document) identifying all AI-generated patterns
+
+**Impact**: Website now reads as genuine student-run organization with local identity, technical competence, and approachable personality. Successfully removed all corporate template artifacts while maintaining professional presentation.
 
 ### Next Steps for Production
 
