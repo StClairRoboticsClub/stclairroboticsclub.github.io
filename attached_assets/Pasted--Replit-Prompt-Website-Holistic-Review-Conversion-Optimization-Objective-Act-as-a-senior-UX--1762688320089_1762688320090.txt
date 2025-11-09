@@ -1,0 +1,107 @@
+🔧 Replit Prompt — Website Holistic Review & Conversion Optimization
+
+Objective:
+Act as a senior UX/UI and web conversion architect performing a comprehensive audit of the St. Clair Robotics Club website. Your goal is to identify every issue and opportunity that affects engagement, navigation, clarity, and conversion — with a focus on funnelling visitors into joining our Discord, email list, or Instagram.
+
+Instructions:
+
+Review all pages, sections, and components within /docs and its subfolders.
+
+Evaluate the site through the lens of user psychology, design hierarchy, and conversion funnel optimization.
+
+Produce a structured critical analysis divided into the following sections:
+
+1. First Impressions & Hero Section
+
+Evaluate how immediately engaging the homepage is (visual hierarchy, clarity, emotional hook).
+
+Does the visitor instantly understand who we are, what we do, and why they should care?
+
+Assess the hero’s contrast, typography, animation, and call-to-action (CTA) visibility.
+
+Suggest actionable improvements to make users want to scroll and explore further.
+
+2. Conversion Funnel Effectiveness
+
+Analyze how well the site funnels users toward joining the club (Discord, email, Instagram).
+
+Are CTAs visually prominent and emotionally motivating?
+
+Are there too many competing CTAs or unclear next steps?
+
+Recommend ideal CTA placement, wording, and color hierarchy to maximize click-through rates.
+
+3. Navigation & Structure
+
+Assess whether users can easily find what they’re looking for.
+
+Check clarity of menu labels and anchor links (e.g., #about, #projects, #join).
+
+Identify any orientation or friction points (too many clicks, missing breadcrumbs, unclear structure).
+
+Suggest restructuring or renaming sections if it improves flow.
+
+4. Content & Messaging
+
+Evaluate tone, clarity, and authenticity of written content.
+
+Does the copy feel human and club-driven, or generic/AI-written?
+
+Recommend rewrites that align with the Robotics Club’s personality: innovative, friendly, hands-on, and real.
+
+Identify any redundant or low-impact text blocks that can be removed or restructured for clarity.
+
+5. Visual Design & Branding
+
+Critique visual consistency: colors, font choices, spacing, and use of imagery.
+
+Does the site feel modern and credible or inconsistent and template-like?
+
+Check for strong contrast and readability, especially in dark mode.
+
+Suggest improvements for favicon, OpenGraph previews, and logo scaling.
+
+6. Interactivity & Engagement
+
+Review animations, hover states, buttons, and scroll behavior.
+
+Are interactive elements smooth, responsive, and meaningful?
+
+Suggest features that can keep users engaged (motion hints, microinteractions, scroll cues, back-to-top button).
+
+7. Performance & Accessibility
+
+Check image optimization (lazy loading, resolution, compression).
+
+Ensure all text has proper color contrast and all links are accessible by keyboard.
+
+Verify that motion respects prefers-reduced-motion.
+
+Suggest lightweight improvements for faster load times and better accessibility compliance.
+
+8. Social Proof & Credibility
+
+Evaluate how the site builds trust (team photos, achievements, ongoing projects).
+
+Suggest ways to highlight real club activity, such as project showcases, events, or testimonials.
+
+Recommend placement for a short “Join the team” or “See what we build” section near key CTAs.
+
+9. Technical & SEO Overview
+
+Check title tags, meta descriptions, alt text, and internal link structure.
+
+Suggest concise metadata for better search and social sharing.
+
+Recommend analytics setup for tracking outbound link clicks (Discord, Instagram, etc.).
+
+10. Action Plan
+
+Provide a prioritized improvement list (High, Medium, Low impact).
+
+Each improvement should include what to fix, why it matters, and the measurable effect (e.g., retention ↑, bounce ↓).
+
+The end result should outline the path to making the site feel high-quality, human-driven, and instantly engaging.
+
+Style:
+Write your report as if you are preparing it for a design review meeting — concise, professional, actionable, and formatted in Markdown for easy documentation. Avoid vague comments; every critique should include a concrete fix.
