@@ -11,13 +11,49 @@ const MEETING_CONFIG = {
 };
 // ========================================
 
+// Calculate countdown to next meeting
+function getMeetingCountdown() {
+  const meetingDate = new Date(MEETING_CONFIG.year, MEETING_CONFIG.month - 1, MEETING_CONFIG.day, 17, 0);
+  const now = new Date();
+  const diff = meetingDate - now;
+  
+  if (diff > 0) {
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    
+    if (days > 0) {
+      return `in ${days}d ${hours}h`;
+    } else if (hours > 0) {
+      return `in ${hours}h ${minutes}m`;
+    } else {
+      return `in ${minutes}m`;
+    }
+  } else if (diff > -3600000) {
+    return 'happening now!';
+  } else {
+    return null;
+  }
+}
+
 // Update meeting card on page load
 document.addEventListener('DOMContentLoaded', () => {
   const meetingDetails = document.querySelector('.meeting-details');
   const meetingProject = document.querySelector('.meeting-project');
   
   if (meetingDetails && meetingProject) {
-    meetingDetails.innerHTML = `<strong>${MEETING_CONFIG.date} at ${MEETING_CONFIG.time}</strong>`;
+    const countdown = getMeetingCountdown();
+    
+    if (countdown) {
+      if (countdown === 'happening now!') {
+        meetingDetails.innerHTML = `<strong>${MEETING_CONFIG.date} at ${MEETING_CONFIG.time} - 🔴 ${countdown}</strong>`;
+      } else {
+        meetingDetails.innerHTML = `<strong>${MEETING_CONFIG.date} at ${MEETING_CONFIG.time}</strong> <span style="color: var(--color-accent); font-weight: 600;">${countdown}</span>`;
+      }
+    } else {
+      meetingDetails.innerHTML = `<strong>${MEETING_CONFIG.date} at ${MEETING_CONFIG.time}</strong>`;
+    }
+    
     meetingProject.textContent = `Working on: ${MEETING_CONFIG.project} • New members welcome`;
     
     // Check if meeting date is in the past
@@ -34,6 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
       warning.style.marginTop = '0.5rem';
       warning.textContent = '⚠️ Meeting date needs updating';
       meetingProject.parentElement.appendChild(warning);
+    }
+    
+    // Update countdown every minute
+    if (countdown) {
+      setInterval(() => {
+        const newCountdown = getMeetingCountdown();
+        if (newCountdown) {
+          if (newCountdown === 'happening now!') {
+            meetingDetails.innerHTML = `<strong>${MEETING_CONFIG.date} at ${MEETING_CONFIG.time} - 🔴 ${newCountdown}</strong>`;
+          } else {
+            meetingDetails.innerHTML = `<strong>${MEETING_CONFIG.date} at ${MEETING_CONFIG.time}</strong> <span style="color: var(--color-accent); font-weight: 600;">${newCountdown}</span>`;
+          }
+        }
+      }, 60000);
     }
   }
 });
