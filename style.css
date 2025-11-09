@@ -1373,10 +1373,13 @@ body {
   }
   
   .features,
+  .why-join {
+    display: none;
+  }
+  
   .events,
   .projects-demo-section,
   .achievements-section,
-  .why-join,
   .instagram-section {
     padding: 2.5rem 0;
   }
