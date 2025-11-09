@@ -558,7 +558,8 @@ body {
 }
 
 /* ===== Features Section ===== */
-.features {
+.features,
+.team-section {
   padding: var(--spacing-3xl) 0;
   background: var(--color-bg);
 }
