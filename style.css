@@ -101,11 +101,12 @@
 
 @media (max-width: 768px) {
   .demo-video-wrapper {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 9 / 16;
+    max-height: 70vh;
   }
   
   .demo-video-wrapper video {
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 
