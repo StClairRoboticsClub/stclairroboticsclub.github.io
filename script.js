@@ -353,6 +353,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (lightboxElement) {
     new Lightbox();
   }
+  
+  // Initialize video auto-play
+  initVideoAutoPlay();
 });
 
 // Lightbox for full-size image viewing
@@ -547,5 +550,110 @@ document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
 });
 
 // Track Join form submissions (already tracked in form handler above)
+
+// Video Auto-Play When Centered
+function initVideoAutoPlay() {
+  const videos = document.querySelectorAll('.demo-video-wrapper video');
+  
+  if (videos.length === 0) return;
+  
+  let currentlyPlaying = null;
+  
+  function isVideoCentered(video) {
+    const rect = video.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const videoCenter = rect.top + rect.height / 2;
+    const viewportCenter = windowHeight / 2;
+    
+    // Video is centered if its center is within the middle 50% of viewport
+    const tolerance = windowHeight * 0.25;
+    return Math.abs(videoCenter - viewportCenter) < tolerance;
+  }
+  
+  function isVideoInViewport(video) {
+    const rect = video.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+    return (
+      rect.top < windowHeight &&
+      rect.bottom > 0
+    );
+  }
+  
+  function checkVideos() {
+    let mostCenteredVideo = null;
+    let minDistance = Infinity;
+    
+    videos.forEach(video => {
+      if (!isVideoInViewport(video)) {
+        // Pause videos that are out of viewport
+        if (!video.paused) {
+          video.pause();
+        }
+        return;
+      }
+      
+      // Find the most centered video
+      const rect = video.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const videoCenter = rect.top + rect.height / 2;
+      const viewportCenter = windowHeight / 2;
+      const distance = Math.abs(videoCenter - viewportCenter);
+      
+      if (distance < minDistance) {
+        minDistance = distance;
+        mostCenteredVideo = video;
+      }
+    });
+    
+    // Play the most centered video, pause others
+    videos.forEach(video => {
+      if (video === mostCenteredVideo && isVideoCentered(video)) {
+        if (video.paused && video.readyState >= 2) {
+          video.play().catch(err => {
+            // Auto-play might be blocked, that's okay
+            console.log('Video autoplay prevented:', err);
+          });
+          currentlyPlaying = video;
+        }
+      } else {
+        if (!video.paused && video !== currentlyPlaying) {
+          video.pause();
+        }
+      }
+    });
+  }
+  
+  // Check on scroll
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        checkVideos();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // Check on load and resize
+  window.addEventListener('load', checkVideos);
+  window.addEventListener('resize', checkVideos);
+  
+  // Initial check
+  setTimeout(checkVideos, 500);
+  
+  // Pause other video when one is playing
+  videos.forEach(video => {
+    video.addEventListener('play', () => {
+      videos.forEach(otherVideo => {
+        if (otherVideo !== video && !otherVideo.paused) {
+          otherVideo.pause();
+        }
+      });
+      currentlyPlaying = video;
+    });
+  });
+}
 
 console.log('St. Clair Robotics Club - Website loaded successfully!');
