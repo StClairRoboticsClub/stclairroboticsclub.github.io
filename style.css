@@ -2080,7 +2080,7 @@ body {
 /* ===== Instagram Section ===== */
 .instagram-section {
   padding: 4rem 0;
-  background: var(--color-surface);
+  background: var(--color-bg);
 }
 
 .instagram-cta {
