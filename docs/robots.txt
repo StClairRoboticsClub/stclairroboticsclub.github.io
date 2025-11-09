@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://stclairroboticsclub.ca/sitemap.xml
+
+# Crawl-delay (optional, helps prevent overloading server)
+Crawl-delay: 1
+
