@@ -512,6 +512,9 @@ body {
 .btn-large {
   padding: 1.125rem 2rem;
   font-size: 1.125rem;
+}
+
+.btn-large.btn-primary {
   flex-direction: column;
   gap: 0.25rem;
 }
