@@ -1,3 +1,43 @@
+// ========================================
+// MEETING CONFIGURATION - UPDATE HERE ONLY
+// ========================================
+const MEETING_CONFIG = {
+  date: 'Wednesday, November 12th',  // Update this for next meeting
+  time: '5:00 PM',
+  project: 'Waveshare Pico Go v2',   // What you're working on
+  year: 2025,                        // Current year
+  month: 11,                         // Month (1-12)
+  day: 12                            // Day of month
+};
+// ========================================
+
+// Update meeting card on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const meetingDetails = document.querySelector('.meeting-details');
+  const meetingProject = document.querySelector('.meeting-project');
+  
+  if (meetingDetails && meetingProject) {
+    meetingDetails.innerHTML = `<strong>${MEETING_CONFIG.date} at ${MEETING_CONFIG.time}</strong>`;
+    meetingProject.textContent = `Working on: ${MEETING_CONFIG.project} • New members welcome`;
+    
+    // Check if meeting date is in the past
+    const meetingDate = new Date(MEETING_CONFIG.year, MEETING_CONFIG.month - 1, MEETING_CONFIG.day);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (meetingDate < today) {
+      console.warn('⚠️ WARNING: Meeting date is in the past! Update MEETING_CONFIG in script.js');
+      meetingDetails.style.opacity = '0.6';
+      const warning = document.createElement('p');
+      warning.style.color = '#ff4444';
+      warning.style.fontSize = '0.9rem';
+      warning.style.marginTop = '0.5rem';
+      warning.textContent = '⚠️ Meeting date needs updating';
+      meetingProject.parentElement.appendChild(warning);
+    }
+  }
+});
+
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');

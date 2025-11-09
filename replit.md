@@ -69,6 +69,17 @@ Preferred communication style: Simple, everyday language.
 - **Pros**: Simple, no database, version-controlled content
 - **Cons**: Requires HTML knowledge for content updates, no admin interface
 
+**Meeting Information Management**:
+- **Single Source of Truth**: Meeting details are configured in `docs/script.js` at the top of the file in the `MEETING_CONFIG` object
+- **How to Update**: Edit only the `MEETING_CONFIG` object (lines 1-11 of script.js) with:
+  - `date`: Day of the week and date (e.g., "Wednesday, November 12th")
+  - `time`: Meeting time (e.g., "5:00 PM")
+  - `project`: Current project being worked on (e.g., "Waveshare Pico Go v2")
+  - `year`, `month`, `day`: Numeric date for validation
+- **Automatic Updates**: JavaScript dynamically populates the meeting card on the homepage
+- **Built-in Validation**: If the meeting date is in the past, a warning appears both in the browser console and on the page
+- **Benefits**: Update once, applies everywhere; prevents outdated meeting info from being displayed
+
 **Image Assets**:
 - Event photos organized in `/docs/images/` subdirectories (club-fair, pizza-night)
 - Logo file (`Robotic_full_logo.png`) in `/docs` root
