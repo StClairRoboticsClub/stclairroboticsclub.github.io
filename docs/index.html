@@ -57,13 +57,13 @@
   </script>
   
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="images/favicon.ico" sizes="16x16 32x32" type="image/x-icon">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon192-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon192-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-512x512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
   
   <!-- Web Manifest -->
   <link rel="manifest" href="site.webmanifest">
@@ -162,7 +162,7 @@
       <div class="demo-grid">
         <div class="demo-card">
           <div class="demo-video-wrapper">
-            <video controls preload="metadata" playsinline>
+            <video controls preload="metadata" playsinline muted loop>
               <source src="images/roarm-demo.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
               <source src="images/roarm-demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -177,7 +177,7 @@
         </div>
         <div class="demo-card">
           <div class="demo-video-wrapper">
-            <video controls preload="metadata" playsinline>
+            <video controls preload="metadata" playsinline muted loop>
               <source src="images/club-fair-demo.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
               <source src="images/club-fair-demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -366,35 +366,6 @@
     </div>
   </section>
 
-  <!-- Achievements Section -->
-  <section class="achievements-section">
-    <div class="container">
-      <h2 class="section-title">What We've Accomplished</h2>
-      <div class="achievements-grid">
-        <div class="achievement-card">
-          <div class="achievement-icon">🤖</div>
-          <h3>Current Project</h3>
-          <p>Waveshare Pico Go v2 — mobile robotics and sensor integration</p>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">🛠️</div>
-          <h3>Hands-On Projects</h3>
-          <p>From robot arms to autonomous navigation and more</p>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">👥</div>
-          <h3>Active Community</h3>
-          <p>Students collaborating on robotics projects</p>
-        </div>
-        <div class="achievement-card">
-          <div class="achievement-icon">📚</div>
-          <h3>Weekly Meetings</h3>
-          <p>Hands-on learning in CAD, programming, and electronics</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Why Join Section -->
   <section class="why-join">
     <div class="container">
@@ -460,26 +431,6 @@
     </div>
   </section>
 
-  <!-- Instagram Feed Section -->
-  <section class="instagram-section">
-    <div class="container">
-      <h2 class="section-title">Follow Our Journey</h2>
-      <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 2rem;">
-        See what we're building every week on Instagram
-      </p>
-      <div class="instagram-cta">
-        <a href="https://www.instagram.com/roboticsclub.scc/" target="_blank" class="btn btn-outline btn-large">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-          Follow @roboticsclub.scc
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA Section -->
   <section class="cta" id="join">
     <div class="container">
@@ -495,8 +446,13 @@
             </svg>
             Join Our Discord
           </a>
-          <a href="join.html" class="btn btn-outline btn-large">
-            Learn How to Join
+          <a href="https://www.instagram.com/roboticsclub.scc/" target="_blank" class="btn btn-outline btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            Follow on Instagram
           </a>
         </div>
       </div>
