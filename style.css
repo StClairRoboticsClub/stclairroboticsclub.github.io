@@ -1297,6 +1297,7 @@ body {
     top: 100%;
     right: 0;
     flex-direction: column;
+    align-items: flex-end;
     background: rgba(20, 21, 26, 0.98);
     backdrop-filter: blur(20px);
     width: 100%;
@@ -1311,6 +1312,10 @@ body {
   .nav-menu.active {
     max-height: 500px;
     opacity: 1;
+  }
+  
+  .nav-menu li {
+    width: auto;
   }
   
   .nav-toggle {
