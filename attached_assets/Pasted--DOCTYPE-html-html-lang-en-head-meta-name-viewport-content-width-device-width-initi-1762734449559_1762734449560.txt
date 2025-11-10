@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student robotics team at St. Clair College in Windsor, Ontario. Building autonomous robots, competing provincially, and running hands-on tech workshops since 2023.">
+  <meta name="keywords" content="St. Clair Robotics Club, robotics club Windsor, student robotics, St. Clair College robotics, autonomous robots, robotics team Ontario, Windsor robotics, robotics competition, robotics workshop, CAD design, Python robotics, C++ robotics">
+  <meta name="author" content="St. Clair Robotics Club">
+  <meta name="robots" content="index, follow">
+  <title>St. Clair Robotics Club | Windsor, Ontario | Student-Run Team</title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stclairroboticsclub.ca/">
+  <meta property="og:title" content="St. Clair Robotics Club | Windsor, Ontario">
+  <meta property="og:description" content="Student robotics team building autonomous robots and competing across Ontario. Join us at St. Clair College in Windsor.">
+  <meta property="og:image" content="https://stclairroboticsclub.ca/images/og-cover.jpg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://stclairroboticsclub.ca/">
+  <meta name="twitter:title" content="St. Clair Robotics Club | Windsor, Ontario">
+  <meta name="twitter:description" content="Student robotics team building autonomous robots and competing across Ontario. Join us at St. Clair College in Windsor.">
+  <meta name="twitter:image" content="https://stclairroboticsclub.ca/images/og-cover.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://stclairroboticsclub.ca/">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "St. Clair Robotics Club",
+    "url": "https://stclairroboticsclub.ca",
+    "logo": "https://stclairroboticsclub.ca/Robotic_full_logo.png",
+    "description": "Student robotics team at St. Clair College in Windsor, Ontario. Building autonomous robots, competing provincially, and running hands-on tech workshops since 2023.",
+    "foundingDate": "2023",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Windsor",
+      "addressRegion": "ON",
+      "addressCountry": "CA",
+      "streetAddress": "St. Clair College"
+    },
+    "sameAs": [
+      "https://discord.gg/gEC8P2Dfqv",
+      "https://www.instagram.com/roboticsclub.scc/",
+      "https://github.com/StClairRoboticsClub"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contact.info@stclairroboticsclub.ca",
+      "contactType": "General Inquiries"
+    }
+  }
+  </script>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="images/favicon.ico" sizes="16x16 32x32" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  
+  <!-- Web Manifest -->
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Fonts and Styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="Robotic_full_logo.png" alt="Logo" class="nav-logo-img">
+        <span class="nav-logo-text">St. Clair Robotics</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="join.html" class="nav-link nav-link-cta">Join Us</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          St. Clair<br>
+          <span class="gradient-text">Robotics Club</span>
+        </h1>
+        <p class="hero-subtitle">
+          Build. Code. Create.
+        </p>
+        <div class="hero-buttons">
+          <a href="join.html" class="btn btn-primary">
+            Join the Club
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/></path>
+            </svg>
+          </a>
+          <a href="#events" class="btn btn-secondary">
+            Learn More
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="robot-card">
+          <div class="robot-card-inner">
+            <img src="Robotic_full_logo.png" alt="St. Clair Robotics" class="robot-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Events Section -->
+  <section class="events" id="events">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Recent Events</h2>
+      </div>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-image-wrapper">
+            <div class="event-carousel" data-carousel="pizza-night">
+              <!-- Image Optimization: Compress images to ≤1200px width, 75-80% quality -->
+              <div class="carousel-track">
+                <img src="images/pizza-night/pizza-party-569643831_17851143075570614_6571995917334712559_n.jpg" alt="Pizza Lego Night - Students building" class="event-image" loading="lazy" decoding="async" />
+                <img src="images/pizza-night/pizza-party-569700187_17851143066570614_3049972744222802126_n.jpg" alt="Pizza Lego Night - Group activity" class="event-image active" loading="lazy" decoding="async" />
+                <img src="images/pizza-night/pizza-party-570004234_17851143054570614_4523362772409586392_n.jpg" alt="Pizza Lego Night - Team collaboration" class="event-image" loading="lazy" decoding="async">
+                <img src="images/pizza-night/pizza-party-570027611_17851143024570614_3878264492064289954_n.jpg" alt="Pizza Lego Night - Creative projects" class="event-image" loading="lazy" decoding="async">
+              </div>
+              <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"/></polyline>
+                </svg>
+              </button>
+              <button class="carousel-btn carousel-btn-next" aria-label="Next photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/></polyline>
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <button class="carousel-dot" data-index="0" aria-label="Go to photo 1"></button>
+                <button class="carousel-dot active" data-index="1" aria-label="Go to photo 2"></button>
+                <button class="carousel-dot" data-index="2" aria-label="Go to photo 3"></button>
+                <button class="carousel-dot" data-index="3" aria-label="Go to photo 4"></button>
+              </div>
+            </div>
+            <div class="event-date-badge">
+              <span class="event-month">Oct</span>
+              <span class="event-day">22</span>
+            </div>
+          </div>
+          <div class="event-content">
+            <h3 class="event-title">Pizza Lego Night</h3>
+            <div class="event-meta">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/></circle>
+                <polyline points="12 6 12 12 16 14"/></polyline>
+              </svg>
+              <span>5:00 PM - 9:00 PM</span>
+            </div>
+            <p class="event-description">
+              Hands-on Lego building, pizza, and community.
+            </p>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-image-wrapper">
+            <div class="event-carousel" data-carousel="club-fair">
+              <!-- Image Optimization: Compress images to ≤1200px width, 75-80% quality -->
+              <div class="carousel-track">
+                <img src="images/club-fair/club-fair-568504188_17851246506570614_2469509976189620938_n.jpg" alt="St. Clair College Club Fair - Booth display" class="event-image" loading="lazy" decoding="async" />
+                <img src="images/club-fair/club-fair-568553785_17851246530570614_7020381520838188966_n.jpg" alt="St. Clair College Club Fair - Student engagement" class="event-image active" loading="lazy" decoding="async" />
+                <img src="images/club-fair/club-fair-569184435_17851246533570614_8795327710259381549_n.jpg" alt="St. Clair College Club Fair - Club showcase" class="event-image" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-569401082_17851246488570614_8545197328708065513_n.jpg" alt="St. Clair College Club Fair - Team members" class="event-image" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-569513514_17851222356570614_8333149330307952106_n.jpg" alt="St. Clair College Club Fair - Interactive demos" class="event-image" loading="lazy" decoding="async">
+                <img src="images/club-fair/club-fair-570897679_17851246515570614_6194593080452071666_n.jpg" alt="St. Clair College Club Fair - Visitor interest" class="event-image" loading="lazy" decoding="async">
+              </div>
+              <button class="carousel-btn carousel-btn-prev" aria-label="Previous photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="15 18 9 12 15 6"/></polyline>
+                </svg>
+              </button>
+              <button class="carousel-btn carousel-btn-next" aria-label="Next photo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"/></polyline>
+                </svg>
+              </button>
+              <div class="carousel-dots">
+                <button class="carousel-dot" data-index="0" aria-label="Go to photo 1"></button>
+                <button class="carousel-dot active" data-index="1" aria-label="Go to photo 2"></button>
+                <button class="carousel-dot" data-index="2" aria-label="Go to photo 3"></button>
+                <button class="carousel-dot" data-index="3" aria-label="Go to photo 4"></button>
+                <button class="carousel-dot" data-index="4" aria-label="Go to photo 5"></button>
+                <button class="carousel-dot" data-index="5" aria-label="Go to photo 6"></button>
+              </div>
+            </div>
+            <div class="event-date-badge">
+              <span class="event-month">Oct</span>
+              <span class="event-day">23</span>
+            </div>
+          </div>
+          <div class="event-content">
+            <h3 class="event-title">St. Clair College Club Fair</h3>
+            <div class="event-meta">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/></circle>
+                <polyline points="12 6 12 12 16 14"/></polyline>
+              </svg>
+              <span>11:00 AM - 2:00 PM</span>
+            </div>
+            <div class="event-meta">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/></path>
+                <circle cx="12" cy="10" r="3"/></circle>
+              </svg>
+              <span>Student Life Centre (SLC)</span>
+            </div>
+            <p class="event-description">
+              Showcasing club projects and meeting new members.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">What We Do</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s;">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Design & Build</h3>
+          <p class="feature-description">
+            CAD design, 3D printing, and fabrication
+          </p>
+        </div>
+        <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s;">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"/></polyline>
+              <polyline points="8 6 2 12 8 18"/></polyline>
+            </svg>
+          </div>
+          <h3 class="feature-title">Programming</h3>
+          <p class="feature-description">
+            Python, C++, and robotics software
+          </p>
+        </div>
+        <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s;">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></path>
+            </svg>
+          </div>
+          <h3 class="feature-title">Electronics</h3>
+          <p class="feature-description">
+            Microcontrollers, sensors, and circuits
+          </p>
+        </div>
+        <div class="feature-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s;">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></polygon>
+            </svg>
+          </div>
+          <h3 class="feature-title">Collaboration</h3>
+          <p class="feature-description">
+            Team projects and hands-on learning
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join Section -->
+  <section class="why-join">
+    <div class="container">
+      <div class="why-join-content">
+        <h2 class="section-title">Why Join Our Club?</h2>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/></path>
+                <path d="M2 17l10 5 10-5"/></path>
+                <path d="M2 12l10 5 10-5"/></path>
+              </svg>
+            </div>
+            <h3>Hands-On Experience</h3>
+            <p>Build real robots and work on cutting-edge projects</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/></path>
+                <circle cx="9" cy="7" r="4"/></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/></path>
+              </svg>
+            </div>
+            <h3>Networking & Teamwork</h3>
+            <p>Connect with students, mentors, and industry professionals</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/></path>
+                <polyline points="22 4 12 14.01 9 11.01"/></polyline>
+              </svg>
+            </div>
+            <h3>Resume Builder</h3>
+            <p>Gain valuable experience that stands out to employers</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"/></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"/></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"/></line>
+              </svg>
+            </div>
+            <h3>Have Fun & Create</h3>
+            <p>Turn your ideas into reality in a supportive environment</p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></polygon>
+              </svg>
+            </div>
+            <h3>Compete & Win</h3>
+            <p>Participate in robotics competitions and showcase your skills</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta" id="join">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Join Us</h2>
+        <p class="cta-description">
+          Start building with us today
+        </p>
+        <div class="cta-buttons">
+          <a href="join.html" class="btn btn-primary btn-large">
+            Join the Club
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/></path>
+            </svg>
+          </a>
+          <a href="https://discord.gg/gEC8P2Dfqv" target="_blank" class="btn btn-outline btn-large">
+            Join Discord
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="Robotic_full_logo.png" alt="Logo" class="footer-logo">
+          <h3 class="footer-brand">St. Clair Robotics Club</h3>
+          <p class="footer-tagline">Building robots, one servo at a time.</p>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="join.html">Join the Club</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/gEC8P2Dfqv" target="_blank">Discord</a></li>
+            <li><a href="https://www.instagram.com/roboticsclub.scc/" target="_blank">Instagram</a></li>
+            <li><a href="https://github.com/StClairRoboticsClub" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:contact.info@stclairroboticsclub.ca">contact.info@stclairroboticsclub.ca</a></li>
+            <li>St. Clair College, Windsor, ON</li>
+            <li><a href="https://www.stclaircollege.ca/" target="_blank">St. Clair College Website</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 St. Clair Robotics Club. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/></line>
+        <line x1="6" y1="6" x2="18" y2="18"/></line>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"/></polyline>
+      </svg>
+    </button>
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/></polyline>
+      </svg>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-image">
+      <div class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/></path>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+
+
+</body></html>
