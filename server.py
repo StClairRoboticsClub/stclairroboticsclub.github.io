@@ -4,7 +4,7 @@ import socketserver
 import os
 
 PORT = 5000
-DIRECTORY = "."
+DIRECTORY = "docs"
 
 class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):

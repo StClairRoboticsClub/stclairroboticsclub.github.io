@@ -2,12 +2,12 @@
 // MEETING CONFIGURATION - UPDATE HERE ONLY
 // ========================================
 const MEETING_CONFIG = {
-  date: 'Wednesday, November 12th',  // Update this for next meeting
+  date: 'Wednesday, November 19th',  // Update this for next meeting
   time: '5:00 PM',
   project: 'Waveshare Pico Go v2',   // What you're working on
   year: 2025,                        // Current year
   month: 11,                         // Month (1-12)
-  day: 12                            // Day of month
+  day: 19                            // Day of month
 };
 // ========================================
 
